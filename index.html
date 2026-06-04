@@ -4,238 +4,869 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Learning Trust Lab</title>
-  <meta name="description" content="A student-led research and public education platform exploring how AI tutoring can support student thinking without replacing it." />
-  <link rel="stylesheet" href="styles.css" />
-</head>
+  <meta name="description" content="A student-led research and public education platform studying how AI tutoring can support student reasoning without replacing it." />
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --paper: #ffffff;
+      --ink: #182230;
+      --muted: #5d6b7a;
+      --soft: #e8eef6;
+      --line: #d8e1ec;
+      --accent: #2f5f8f;
+      --accent-2: #6f8fb3;
+      --accent-soft: #eef5fb;
+      --green-soft: #edf7f3;
+      --green: #2f7d62;
+      --shadow: 0 18px 45px rgba(22, 42, 70, 0.08);
+      --radius: 22px;
+      --max: 1120px;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(47, 95, 143, 0.14), transparent 34rem),
+        radial-gradient(circle at 90% 18%, rgba(111, 143, 179, 0.14), transparent 30rem),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(246, 248, 251, 0.82);
+      border-bottom: 1px solid rgba(216, 225, 236, 0.8);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 24px rgba(47, 95, 143, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 14px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 64px 22px 90px;
+    }
+
+    section {
+      scroll-margin-top: 92px;
+      margin-top: 76px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 18px;
+    }
+
+    .hero-card, .panel, .brief-card, .article, .mini-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(216, 225, 236, 0.9);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+
+    .hero-card {
+      padding: 48px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 760;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.55rem, 6vw, 5.2rem);
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.14rem;
+      max-width: 760px;
+      margin-top: 22px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .side-panel {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .question-box {
+      background: var(--accent-soft);
+      border-radius: 18px;
+      padding: 22px;
+      border: 1px solid rgba(47, 95, 143, 0.14);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--soft);
+      color: #405065;
+      font-size: 0.86rem;
+      font-weight: 650;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 26px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .panel, .mini-card, .brief-card {
+      padding: 26px;
+    }
+
+    .number {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .quote-line {
+      font-size: clamp(1.45rem, 2.8vw, 2.3rem);
+      line-height: 1.16;
+      letter-spacing: -0.04em;
+      font-weight: 800;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    .article {
+      padding: clamp(28px, 5vw, 58px);
+      margin-top: 24px;
+    }
+
+    .article-header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 30px;
+    }
+
+    .article h2 {
+      font-size: clamp(2.05rem, 4.6vw, 4rem);
+      margin-bottom: 12px;
+    }
+
+    .article .subtitle {
+      color: var(--muted);
+      font-size: 1.16rem;
+      margin-bottom: 0;
+    }
+
+    .article-body {
+      max-width: 820px;
+    }
+
+    .article-body p {
+      font-size: 1.03rem;
+      margin-bottom: 18px;
+    }
+
+    .article-body strong {
+      color: #102033;
+    }
+
+    .article-callout {
+      margin: 28px 0;
+      padding: 24px;
+      border-radius: 18px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(47, 95, 143, 0.16);
+      font-size: 1.18rem;
+      font-weight: 780;
+      line-height: 1.35;
+      color: #163452;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 28px;
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 16px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbfdff;
+    }
+
+    .metric b {
+      color: var(--accent);
+    }
+
+    .brief-card.featured {
+      border-color: rgba(47, 95, 143, 0.32);
+      background: linear-gradient(180deg, #ffffff, #f7fbff);
+    }
+
+    .brief-card .tagline {
+      margin-top: 16px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .rubric-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .rubric-table th, .rubric-table td {
+      padding: 17px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .rubric-table th {
+      background: var(--accent);
+      color: white;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .rubric-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .flow-step {
+      padding: 20px;
+      border-radius: 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      text-align: center;
+      font-weight: 750;
+    }
+
+    .arrow {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.4rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      margin-top: 80px;
+      padding-top: 26px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 32px;
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+
+      .metric {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 10px 14px;
+      }
+
+      main {
+        padding-top: 38px;
+      }
+
+      .article {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
 <body>
   <header class="site-header">
-    <nav class="nav">
-      <a href="#" class="brand">AI Learning Trust Lab</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="AI Learning Trust Lab home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>AI Learning Trust Lab</span>
+      </a>
       <div class="nav-links">
-        <a href="#work">Current Work</a>
+        <a href="#current">Current Work</a>
         <a href="#briefs">Research Briefs</a>
         <a href="#rubric">Rubric</a>
         <a href="#survey">Survey</a>
-        <a href="#demo">Prototype</a>
-        <a href="#contact" class="nav-button">Get Involved</a>
+        <a href="#prototype">Prototype</a>
+        <a href="#contact">Get Involved</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
+  <main id="top">
+    <section class="hero" aria-label="Homepage introduction">
+      <div class="hero-card">
         <p class="eyebrow">Student-led research · AI tutoring · education trust</p>
         <h1>Building trustworthy AI tutoring that helps students think, not just answer.</h1>
-        <p class="hero-subtitle">
-          AI Learning Trust Lab is a student-led research and public education platform studying how AI tutoring can support student reasoning without quietly replacing it.
-        </p>
-        <div class="hero-actions">
-          <a href="#work" class="primary-button">See Current Work</a>
-          <a href="rubric.html" class="secondary-button">View Rubric v1</a>
+        <p class="lead">AI Learning Trust Lab is a student-led research and public education platform studying how AI tutoring can support student reasoning without quietly replacing it.</p>
+        <div class="button-row">
+          <a class="button primary" href="#current">See Current Work</a>
+          <a class="button" href="#briefs">Read Brief 01</a>
+          <a class="button" href="#rubric">View Rubric v1</a>
         </div>
       </div>
-
-      <aside class="hero-card">
-        <h2>Core question</h2>
-        <p>
-          If students increasingly rely on AI for help, how can these systems strengthen reasoning instead of simply delivering faster answers?
-        </p>
-        <ul>
-          <li>Trustworthy explanations</li>
-          <li>Student agency</li>
-          <li>Overreliance risk</li>
-          <li>Verifier-mediated tutoring</li>
-        </ul>
+      <aside class="side-panel panel">
+        <div>
+          <p class="eyebrow">Core question</p>
+          <p class="quote-line">If students increasingly rely on AI for help, how can these systems strengthen reasoning instead of simply delivering faster answers?</p>
+        </div>
+        <div class="tag-list" aria-label="Research themes">
+          <span class="tag">Trustworthy explanations</span>
+          <span class="tag">Student agency</span>
+          <span class="tag">Overreliance risk</span>
+          <span class="tag">Verifier-mediated tutoring</span>
+        </div>
       </aside>
     </section>
 
-    <section class="section founder">
-      <div class="founder-card">
-        <div>
-          <div class="section-label">About the founder</div>
+    <section id="founder">
+      <div class="grid-2">
+        <div class="section-heading">
+          <p class="eyebrow">About the founder</p>
           <h2>Founded by YingKai Deng</h2>
-          <p>
-            AI Learning Trust Lab was founded by YingKai Deng, a high school student researcher interested in trustworthy AI, verifier systems, and the future of AI tutoring. His work asks a practical question: if students increasingly rely on AI for academic help, how can these systems strengthen reasoning instead of quietly replacing it?
-          </p>
-          <p>
-            The lab connects research writing, student feedback, evaluation rubrics, and verifier prototypes to examine how AI learning tools can become more transparent, reflective, and supportive of genuine understanding.
-          </p>
         </div>
-        <div class="founder-note">
-          <span>Research focus</span>
-          <strong>AI tutoring should be evaluated not only by answer accuracy, but by whether it protects student thinking.</strong>
+        <div class="panel">
+          <p>AI Learning Trust Lab was founded by YingKai Deng, a high school student researcher interested in trustworthy AI, verifier systems, and the future of AI tutoring. His work asks a practical question: if students increasingly rely on AI for academic help, how can these systems strengthen reasoning instead of quietly replacing it?</p>
+          <p>The lab connects research writing, student feedback, evaluation rubrics, and verifier prototypes to examine how AI learning tools can become more transparent, reflective, and supportive of genuine understanding.</p>
+          <p class="tagline"><strong>Research focus:</strong> AI tutoring should be evaluated not only by answer accuracy, but by whether it protects student thinking.</p>
         </div>
       </div>
     </section>
 
-    <section class="section current-work" id="work">
-      <div class="section-label">Current work</div>
-      <h2>Four connected pieces of work.</h2>
-      <div class="work-grid">
-        <article>
-          <span>01</span>
+    <section id="current">
+      <div class="section-heading">
+        <p class="eyebrow">Current work</p>
+        <h2>Four connected pieces of work.</h2>
+      </div>
+      <div class="grid-4">
+        <div class="mini-card">
+          <span class="number">01</span>
           <h3>Research Briefs</h3>
-          <p>Publishing short public-facing briefs on AI tutoring, student reasoning, trustworthy explanations, and overreliance.</p>
-        </article>
-        <article>
-          <span>02</span>
+          <p class="muted">Publishing short public-facing briefs on AI tutoring, student reasoning, trustworthy explanations, and overreliance.</p>
+        </div>
+        <div class="mini-card">
+          <span class="number">02</span>
           <h3>Explanation Rubric</h3>
-          <p>Developing a scoring framework to evaluate whether an AI explanation supports understanding, agency, and reasoning.</p>
-        </article>
-        <article>
-          <span>03</span>
+          <p class="muted">Developing a scoring framework to evaluate whether an AI explanation supports understanding, agency, and reasoning.</p>
+        </div>
+        <div class="mini-card">
+          <span class="number">03</span>
           <h3>Student Survey</h3>
-          <p>Preparing a pilot survey on how high school students use AI for learning and when it changes how they think.</p>
-        </article>
-        <article>
-          <span>04</span>
+          <p class="muted">Preparing a pilot survey on how high school students use AI for learning and when it changes how they think.</p>
+        </div>
+        <div class="mini-card">
+          <span class="number">04</span>
           <h3>Verifier Prototype</h3>
-          <p>Building a small research prototype that checks tutoring explanations for pedagogical risk before students rely on them.</p>
-        </article>
+          <p class="muted">Building a small research prototype that checks tutoring explanations for pedagogical risk before students rely on them.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section why">
-      <div class="section-label">Why this matters</div>
-      <h2>AI tutoring is spreading faster than schools can evaluate it.</h2>
-      <p>
-        Many students already use AI for homework, studying, and explanations, but most tools are still judged mainly by answer accuracy. AI Learning Trust Lab argues that the deeper question is whether these systems protect student reasoning. A tutor that gives the right answer too quickly may still weaken learning if it prevents students from struggling, checking, and thinking independently.
-      </p>
-      <p>
-        This project focuses on the space between correctness and understanding: how explanations are framed, how much reasoning they reveal, whether they invite students to continue thinking, and when they create dependence.
-      </p>
-    </section>
-
-    <section class="section problem">
-      <div class="section-label">Research questions</div>
-      <h2>What makes an AI tutor trustworthy for learning?</h2>
-      <div class="question-list">
-        <p>How can AI explanations support reasoning instead of replacing it?</p>
-        <p>How can verifiers detect when an explanation creates overreliance?</p>
-        <p>What should students and teachers look for when judging whether an AI explanation is actually helpful?</p>
+    <section id="why">
+      <div class="grid-2">
+        <div class="section-heading">
+          <p class="eyebrow">Why this matters</p>
+          <h2>AI tutoring is spreading faster than schools can evaluate it.</h2>
+        </div>
+        <div class="panel">
+          <p>Many students already use AI for homework, studying, and explanations, but most tools are still judged mainly by answer accuracy. AI Learning Trust Lab argues that the deeper question is whether these systems protect student reasoning. A tutor that gives the right answer too quickly may still weaken learning if it prevents students from struggling, checking, and thinking independently.</p>
+          <p>This project focuses on the space between correctness and understanding: how explanations are framed, how much reasoning they reveal, whether they invite students to continue thinking, and when they create dependence.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section products">
-      <div class="section-label">Core outputs</div>
-      <h2>Research, feedback, and prototypes built around one problem.</h2>
+    <section id="questions">
+      <div class="section-heading">
+        <p class="eyebrow">Research questions</p>
+        <h2>What makes an AI tutor trustworthy for learning?</h2>
+      </div>
+      <div class="grid-3">
+        <div class="panel">
+          <h3>Reasoning support</h3>
+          <p class="muted">How can AI explanations support reasoning instead of replacing it?</p>
+        </div>
+        <div class="panel">
+          <h3>Overreliance detection</h3>
+          <p class="muted">How can verifiers detect when an explanation creates dependence or shortcuts student thinking?</p>
+        </div>
+        <div class="panel">
+          <h3>Evaluation standards</h3>
+          <p class="muted">What should students and teachers look for when judging whether an AI explanation is actually helpful?</p>
+        </div>
+      </div>
+    </section>
 
-      <div class="card-grid">
-        <article class="product-card" id="briefs">
-          <span class="card-number">01</span>
+    <section id="outputs">
+      <div class="section-heading">
+        <p class="eyebrow">Core outputs</p>
+        <h2>Research, feedback, and prototypes built around one problem.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="brief-card featured">
+          <span class="number">01</span>
           <h3>Research Briefs</h3>
-          <p>
-            Short, high-quality public articles on AI tutoring, trustworthy explanations, student overreliance, and verifier-mediated learning.
-          </p>
-          <a href="briefs.html">View brief topics →</a>
+          <p class="muted">Short, high-quality public articles on AI tutoring, trustworthy explanations, student overreliance, and verifier-mediated learning.</p>
+          <p><a class="button" href="#briefs">View Brief 01 →</a></p>
         </article>
-
-        <article class="product-card" id="rubric">
-          <span class="card-number">02</span>
+        <article class="brief-card">
+          <span class="number">02</span>
           <h3>Trustworthy Explanation Rubric v1</h3>
-          <p>
-            A testable scoring framework for evaluating whether AI explanations support understanding rather than shortcutting it.
-          </p>
-          <a href="rubric.html">See the rubric →</a>
+          <p class="muted">A testable scoring framework for evaluating whether AI explanations support understanding rather than shortcutting it.</p>
+          <p><a class="button" href="#rubric">See the rubric →</a></p>
         </article>
-
-        <article class="product-card" id="survey">
-          <span class="card-number">03</span>
+        <article class="brief-card">
+          <span class="number">03</span>
           <h3>Student AI Learning Survey Pilot</h3>
-          <p>
-            A student feedback instrument designed to collect real experiences with AI tutoring and turn them into mini reports.
-          </p>
-          <a href="survey.html">Preview the survey →</a>
+          <p class="muted">A student feedback instrument designed to collect real experiences with AI tutoring and turn them into mini reports.</p>
+          <p><a class="button" href="#survey">Preview the survey →</a></p>
         </article>
       </div>
     </section>
 
-    <section class="section metrics">
-      <div class="section-label">Project milestones</div>
-      <h2>2026 goals for public research and educational impact.</h2>
+    <section id="briefs">
+      <div class="section-heading">
+        <p class="eyebrow">Research Briefs</p>
+        <h2>Public-facing research notes on AI tutoring, trust, and student reasoning.</h2>
+        <p>The first brief establishes the central premise of the lab: AI tutoring should be evaluated not only by the correctness of its answers, but by whether it strengthens the learner’s ability to reason.</p>
+      </div>
 
-      <div class="metrics-grid">
-        <div class="metric">
-          <strong>8–10</strong>
-          <span>Research briefs</span>
+      <article class="article" id="brief-01">
+        <header class="article-header">
+          <p class="eyebrow">Research Brief 01</p>
+          <h2>Why Correct Answers Are Not the Same as Understanding</h2>
+          <p class="subtitle">Why AI tutoring should be evaluated by student reasoning, not answer accuracy alone</p>
+        </header>
+        <div class="article-body">
+          <p><strong>A correct answer can hide a failed learning process.</strong></p>
+
+          <p>That is the problem AI tutoring forces us to confront. In many conversations about educational AI, the first question is whether the system gives accurate answers. Accuracy matters. An AI tutor that gives incorrect explanations can mislead students, reinforce misconceptions, and weaken trust in learning tools.</p>
+
+          <p>But accuracy is only the beginning of educational trust, not the end.</p>
+
+          <p>A student can receive a correct answer and still not understand the concept behind it. They can read a fluent explanation and feel that it makes sense, while remaining unable to reproduce the reasoning. They can recognize the shape of a good answer without being able to generate, test, or apply the idea independently.</p>
+
+          <div class="article-callout">Answer-level accuracy is not the same as learner-level understanding.</div>
+
+          <p>Answer-level accuracy asks whether the system’s response is correct. Learner-level understanding asks whether the student can think more clearly after receiving it. A system can succeed at the first while failing at the second.</p>
+
+          <p>This distinction matters because AI systems are exceptionally good at producing the surface features of understanding. They can generate fluent explanations, organized steps, reassuring tone, and confident summaries. They can make a difficult concept feel resolved. But learning is not complete when an explanation sounds finished.</p>
+
+          <p>Learning happens when the student can internalize, question, transfer, and extend the reasoning.</p>
+
+          <p>A polished explanation can create the feeling of learning before learning has actually occurred.</p>
+
+          <p>This insight connects directly to my broader work on AI, belief, and trust. In <em>Who Do You Trust to Understand You?</em>, I examine how AI responses can feel trustworthy not only because of their content, but because of tone, fluency, rhythm, and emotional resonance. The book begins from the question of whether something that “feels true enough to believe” can start replacing truth itself. It also describes how a response can echo a user’s emotional state without necessarily helping them understand more deeply.</p>
+
+          <p>In education, that distinction becomes urgent.</p>
+
+          <p>When a student asks an AI tutor for help, the response often arrives with qualities that feel pedagogically reassuring: clarity, patience, structure, and confidence. These qualities can help. They may reduce anxiety, make a concept more approachable, and encourage a student to stay engaged. But they can also create an illusion of mastery.</p>
+
+          <p>A student may think, “I understand this now,” when what has really happened is that the system has removed the discomfort of not understanding.</p>
+
+          <p><strong>Real understanding is not the same as relief.</strong></p>
+
+          <p>Consider a student studying the Cold War. An AI tutor may correctly explain containment, ideological conflict, nuclear deterrence, and proxy wars. The answer may be accurate and well organized. But if the student cannot later compare Korea and Vietnam, connect containment to decolonization, or explain why Cold War policy changed across regions, the explanation has not become historical understanding.</p>
+
+          <p>The student has received information, but not necessarily built reasoning.</p>
+
+          <p>The same pattern appears in mathematics. A model can correctly show every step of a derivative problem. The student may follow the solution line by line and feel that it makes sense. But if the student cannot solve a structurally similar problem without the model, the explanation has not transferred into independent understanding.</p>
+
+          <p>In both cases, the system has produced something correct or useful. But the student has not necessarily become more capable.</p>
+
+          <p>That difference should shape how AI tutoring is evaluated.</p>
+
+          <p>A calculator is supposed to produce an answer. A tutor is supposed to develop the learner. If an AI tutor only gives correct responses, it may function as an answer engine, but not as an educational system.</p>
+
+          <p>The purpose of tutoring is not to remove difficulty as quickly as possible. It is to make difficulty productive.</p>
+
+          <p>A strong tutor does not simply provide explanations. A strong tutor watches how a student thinks. It asks the student to articulate a step, defend a claim, compare alternatives, notice uncertainty, and revise an error. It understands that confusion is not always a failure to eliminate. Sometimes confusion is the signal that learning has begun.</p>
+
+          <p>AI tutoring systems should be designed around the same principle.</p>
+
+          <p>Instead of asking only whether an AI response is correct, we should ask whether the interaction helps students do five things:</p>
+
+          <div class="metric-list">
+            <div class="metric"><b>Explain</b><span>Can the student restate the concept in their own words without copying the AI’s phrasing?</span></div>
+            <div class="metric"><b>Transfer</b><span>Can the student apply the idea to a new problem, example, or context?</span></div>
+            <div class="metric"><b>Question</b><span>Can the student identify what remains unclear, uncertain, or assumption-dependent?</span></div>
+            <div class="metric"><b>Detect</b><span>Can the student notice when a fluent explanation is incomplete or misleading?</span></div>
+            <div class="metric"><b>Reason independently</b><span>Can the student continue thinking after the AI response is gone?</span></div>
+          </div>
+
+          <p>These are learner-centered outcomes. They measure not just what the system produced, but what the student became able to do.</p>
+
+          <p>This is why trustworthy AI tutoring requires a different evaluation framework from ordinary answer generation. A response can be correct, fluent, and encouraging while still encouraging passivity. It can reduce confusion without strengthening reasoning. It can make students feel supported while quietly training them to outsource the hardest part of learning.</p>
+
+          <p>That is the deeper risk.</p>
+
+          <p>Not simply that AI will give students the wrong answer.</p>
+
+          <p>But that AI will give students the right answer in a way that makes thinking feel unnecessary.</p>
+
+          <p>This is the foundation of AI Learning Trust Lab. The project studies how AI tutoring can support student thinking without replacing it. That requires moving beyond answer accuracy as the main measure of success. It requires tools for evaluating explanation quality, student reasoning, overreliance, pedagogical risk, and reflective trust.</p>
+
+          <p>The lab’s research briefs, student survey, trustworthy explanation rubric, and future verifier demos all begin from the same premise:</p>
+
+          <p><strong>Educational AI should not only produce better answers.</strong></p>
+
+          <p><strong>It should help produce stronger learners.</strong></p>
+
+          <p>The goal is not AI that makes every answer feel clear.</p>
+
+          <p>The goal is AI that helps students become clearer thinkers.</p>
+
+          <p>Because in education, the final product is not the answer.</p>
+
+          <p><strong>The final product is the student’s capacity to reach it.</strong></p>
         </div>
-        <div class="metric">
-          <strong>50–100</strong>
-          <span>Student survey responses</span>
+      </article>
+
+      <div class="grid-3" style="margin-top: 22px;">
+        <article class="brief-card">
+          <p class="eyebrow">Next brief</p>
+          <h3>When AI Makes Students Feel Understood</h3>
+          <p class="muted">How emotional resonance can create trust before understanding.</p>
+        </article>
+        <article class="brief-card">
+          <p class="eyebrow">Upcoming</p>
+          <h3>What Makes an AI Explanation Trustworthy?</h3>
+          <p class="muted">From fluent answers to reflective trust and rubric-based evaluation.</p>
+        </article>
+        <article class="brief-card">
+          <p class="eyebrow">Upcoming</p>
+          <h3>The Biggest Risk Is Overreliance</h3>
+          <p class="muted">Why students may depend on AI because it reduces cognitive pressure.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="rubric">
+      <div class="section-heading">
+        <p class="eyebrow">Trustworthy Explanation Rubric v1</p>
+        <h2>A first scoring framework for AI tutoring explanations.</h2>
+        <p>This rubric evaluates whether an AI-generated explanation supports student understanding rather than simply delivering a polished answer.</p>
+      </div>
+      <table class="rubric-table" aria-label="Trustworthy Explanation Rubric v1">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Guiding question</th>
+            <th>What strong explanations do</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Accuracy</strong></td>
+            <td>Is the explanation factually and conceptually correct?</td>
+            <td>Provides correct information without introducing misleading shortcuts.</td>
+          </tr>
+          <tr>
+            <td><strong>Reasoning visibility</strong></td>
+            <td>Does the explanation show how the answer was reached?</td>
+            <td>Makes steps, assumptions, and logic visible instead of only giving the result.</td>
+          </tr>
+          <tr>
+            <td><strong>Student agency</strong></td>
+            <td>Does the student still have to think?</td>
+            <td>Invites prediction, self-explanation, checking, or revision.</td>
+          </tr>
+          <tr>
+            <td><strong>Uncertainty awareness</strong></td>
+            <td>Does the explanation acknowledge limits?</td>
+            <td>Names uncertainty, alternative interpretations, or conditions when appropriate.</td>
+          </tr>
+          <tr>
+            <td><strong>Overreliance risk</strong></td>
+            <td>Could the student copy or accept the answer without understanding?</td>
+            <td>Avoids over-disclosure and preserves productive friction.</td>
+          </tr>
+          <tr>
+            <td><strong>Reflective trust</strong></td>
+            <td>Does the explanation earn trust through transparency rather than tone alone?</td>
+            <td>Supports confidence while encouraging the student to question, test, and verify.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="survey">
+      <div class="grid-2">
+        <div class="section-heading">
+          <p class="eyebrow">Student survey pilot</p>
+          <h2>Collecting real student experiences with AI tutoring.</h2>
         </div>
-        <div class="metric">
-          <strong>2–3</strong>
-          <span>Teacher reviewers</span>
-        </div>
-        <div class="metric">
-          <strong>1</strong>
-          <span>Verifier prototype</span>
-        </div>
-        <div class="metric">
-          <strong>1–2</strong>
-          <span>Mini reports</span>
+        <div class="panel">
+          <p>The survey is designed to ask students when they use AI for learning, what kinds of explanations feel helpful, and when AI changes how much they think for themselves.</p>
+          <p>Planned survey themes include AI use frequency, perceived helpfulness, explanation trust, overreliance, confusion recovery, and whether students can apply ideas after using AI.</p>
+          <p class="muted">Survey form in development.</p>
         </div>
       </div>
     </section>
 
-    <section class="section demo" id="demo">
-      <div class="demo-text">
-        <div class="section-label">Verifier research prototype</div>
+    <section id="milestones">
+      <div class="section-heading">
+        <p class="eyebrow">Project milestones</p>
+        <h2>2026 goals for public research and educational impact.</h2>
+      </div>
+      <div class="grid-4">
+        <div class="mini-card"><h3>8–10</h3><p class="muted">Research briefs</p></div>
+        <div class="mini-card"><h3>50–100</h3><p class="muted">Student survey responses</p></div>
+        <div class="mini-card"><h3>2–3</h3><p class="muted">Teacher reviewers</p></div>
+        <div class="mini-card"><h3>1</h3><p class="muted">Verifier prototype</p></div>
+      </div>
+    </section>
+
+    <section id="prototype">
+      <div class="section-heading">
+        <p class="eyebrow">Verifier research prototype</p>
         <h2>Checking AI explanations before students rely on them.</h2>
-        <p>
-          This prototype is being developed to demonstrate how AI tutoring explanations can be reviewed for pedagogical risk before they reach the student. Instead of judging only whether an answer is correct, the verifier asks whether the explanation supports reasoning, acknowledges uncertainty, avoids over-disclosure, and preserves student agency.
-        </p>
-        <a href="demo.html" class="secondary-button">Open prototype page</a>
+        <p>This prototype is being developed to demonstrate how AI tutoring explanations can be reviewed for pedagogical risk before they reach the student.</p>
       </div>
-      <div class="demo-box">
-        <div class="demo-step active">Draft AI explanation</div>
-        <div class="demo-arrow">↓</div>
-        <div class="demo-step">Pedagogical risk check</div>
-        <div class="demo-arrow">↓</div>
-        <div class="demo-step success">Thinking-supportive revision</div>
-      </div>
-    </section>
-
-    <section class="section reports">
-      <div class="section-label">Mini reports</div>
-      <h2>Turning student feedback into public education.</h2>
-      <p>
-        Mini reports will summarize what students say about AI tutoring: where it helps, where it weakens thinking, and what educators should understand before adopting AI tools at scale.
-      </p>
-      <div class="report-list">
-        <a href="reports.html">Mini Report 1: How Students Use AI When They Feel Stuck</a>
-        <a href="reports.html">Mini Report 2: What Makes an AI Explanation Feel Trustworthy?</a>
+      <div class="panel">
+        <p>Instead of judging only whether an answer is correct, the verifier asks whether the explanation supports reasoning, acknowledges uncertainty, avoids over-disclosure, and preserves student agency.</p>
+        <div class="flow" aria-label="Prototype workflow">
+          <div class="flow-step">Draft AI explanation</div>
+          <div class="arrow">↓</div>
+          <div class="flow-step">Pedagogical risk check</div>
+          <div class="arrow">↓</div>
+          <div class="flow-step">Thinking-supportive revision</div>
+        </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div>
-        <div class="section-label">Get involved</div>
-        <h2>For students, teachers, and reviewers interested in AI learning trust.</h2>
-        <p>
-          This platform welcomes student survey responses, teacher rubric feedback, and conversations about how AI tutoring can be evaluated responsibly.
-        </p>
+    <section id="reports">
+      <div class="section-heading">
+        <p class="eyebrow">Mini reports</p>
+        <h2>Turning student feedback into public education.</h2>
+        <p>Mini reports will summarize what students say about AI tutoring: where it helps, where it weakens thinking, and what educators should understand before adopting AI tools at scale.</p>
       </div>
-      <form class="contact-form">
-        <input type="text" placeholder="Name" aria-label="Name" />
-        <input type="email" placeholder="Email" aria-label="Email" />
-        <select aria-label="Role">
-          <option>Student</option>
-          <option>Teacher</option>
-          <option>Researcher</option>
-          <option>Parent</option>
-          <option>Other</option>
-        </select>
-        <textarea placeholder="How would you like to get involved?" aria-label="Message"></textarea>
-        <button type="button">Contact form in development</button>
-      </form>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Mini Report 1: How Students Use AI When They Feel Stuck</h3>
+          <p class="muted">Planned after survey pilot.</p>
+        </div>
+        <div class="panel">
+          <h3>Mini Report 2: What Makes an AI Explanation Feel Trustworthy?</h3>
+          <p class="muted">Planned after survey pilot.</p>
+        </div>
+      </div>
     </section>
+
+    <section id="contact">
+      <div class="grid-2">
+        <div class="section-heading">
+          <p class="eyebrow">Get involved</p>
+          <h2>For students, teachers, and reviewers interested in AI learning trust.</h2>
+        </div>
+        <div class="panel">
+          <p>This platform welcomes student survey responses, teacher rubric feedback, and conversations about how AI tutoring can be evaluated responsibly.</p>
+          <div class="tag-list">
+            <span class="tag">Student</span>
+            <span class="tag">Teacher</span>
+            <span class="tag">Researcher</span>
+            <span class="tag">Parent</span>
+            <span class="tag">Other</span>
+          </div>
+          <p class="muted" style="margin-top: 18px;">Contact form in development.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 AI Learning Trust Lab.</span>
+      <span>Student-led research and public education on AI tutoring.</span>
+    </footer>
   </main>
-
-  <footer class="footer">
-    <p>© 2026 AI Learning Trust Lab. Student-led research and public education on AI tutoring.</p>
-  </footer>
 </body>
 </html>
