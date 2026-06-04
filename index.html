@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research and public education platform studying how AI tutoring can support student reasoning without replacing it." />
   <style>
-    /* Core question hierarchy fix: June 4 */
+    /* Hero layout and CTA clarity fix: June 4 */
     :root {
       --bg: #f7f8fa;
       --paper: #ffffff;
@@ -103,7 +103,15 @@
     }
 
     .hero-inner {
-      max-width: 940px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.75fr);
+      gap: 46px;
+      align-items: center;
+      max-width: 1080px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
     }
 
     .hero-topline {
@@ -132,10 +140,10 @@
     }
 
     h1 {
-      font-size: clamp(2.25rem, 4.6vw, 3.95rem);
-      line-height: 1.06;
-      max-width: 820px;
-      letter-spacing: -0.055em;
+      font-size: clamp(2.35rem, 4.4vw, 4.25rem);
+      line-height: 1.04;
+      max-width: 760px;
+      letter-spacing: -0.06em;
     }
 
     h2 {
@@ -153,24 +161,16 @@
     .lead {
       color: var(--muted);
       font-size: clamp(1rem, 1.35vw, 1.16rem);
-      max-width: 680px;
-      margin-top: 18px;
+      max-width: 660px;
+      margin-top: 20px;
       line-height: 1.55;
-    }
-
-    .hero-lower {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
-      gap: 28px;
-      align-items: start;
-      margin-top: 28px;
     }
 
     .button-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 0;
+      margin-top: 24px;
     }
 
     .button {
@@ -213,7 +213,7 @@
     .question-text {
       display: block;
       color: var(--accent-dark);
-      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      font-size: clamp(1.35rem, 2vw, 1.85rem);
       line-height: 1.18;
       letter-spacing: -0.045em;
       font-weight: 800;
@@ -437,7 +437,7 @@
     }
 
     @media (max-width: 900px) {
-      .hero-lower, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .hero-inner, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
       .hero { padding-top: 44px; }
       .hero-question { padding: 24px; }
       .flow { grid-template-columns: 1fr; }
@@ -475,26 +475,24 @@
   <main id="top">
     <section class="hero" aria-label="Homepage introduction">
       <div class="hero-inner">
-        <p class="hero-topline"><span class="hero-dot" aria-hidden="true"></span>Student-led research · AI tutoring · education trust</p>
-        <h1>Helping AI tutoring strengthen student reasoning.</h1>
-        <p class="lead">AI Learning Trust Lab studies how AI tutors can support learning without quietly replacing the student’s own thinking.</p>
-        <div class="hero-lower">
-          <div>
-            <div class="button-row">
-              <a class="button primary" href="#briefs">Read Brief 01</a>
-              <a class="button" href="#rubric">View Rubric v1</a>
-              <a class="button" href="#current">See Current Work</a>
-            </div>
+        <div class="hero-copy">
+          <p class="hero-topline"><span class="hero-dot" aria-hidden="true"></span>Student-led research · AI tutoring · education trust</p>
+          <h1>Helping AI tutoring strengthen student reasoning.</h1>
+          <p class="lead">AI Learning Trust Lab studies how AI tutors can support learning without quietly replacing the student’s own thinking.</p>
+          <div class="button-row">
+            <a class="button primary" href="#briefs">Read the first brief</a>
+            <a class="button" href="#rubric">View the evaluation rubric</a>
+            <a class="button" href="#current">See current work</a>
           </div>
-          <div class="hero-question">
-            <b>Core question</b>
-            <span class="question-text">How can AI tutors strengthen student reasoning instead of simply delivering faster answers?</span>
-            <div class="hero-tags" aria-label="Research themes">
-              <span class="tag">Trustworthy explanations</span>
-              <span class="tag">Student agency</span>
-              <span class="tag">Overreliance risk</span>
-              <span class="tag">Verifier-mediated tutoring</span>
-            </div>
+        </div>
+        <div class="hero-question">
+          <b>Core question</b>
+          <span class="question-text">How can AI tutors strengthen student reasoning instead of simply delivering faster answers?</span>
+          <div class="hero-tags" aria-label="Research themes">
+            <span class="tag">Trustworthy explanations</span>
+            <span class="tag">Student agency</span>
+            <span class="tag">Overreliance risk</span>
+            <span class="tag">Verifier-mediated tutoring</span>
           </div>
         </div>
       </div>
