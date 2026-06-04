@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research platform studying how AI tutoring can strengthen student reasoning, preserve judgment, and reduce overreliance." />
   <style>
-    /* Admissions redesign step 7: selected writing added for admissions clarity, June 4 */
+    /* Admissions redesign step 9: research outputs and applications added for admissions clarity, June 4 */
     :root {
       --bg: #f6f8fb;
       --paper: #ffffff;
@@ -107,6 +107,22 @@
     .why-box .eyebrow { color: #b8d8f0; }
     .why-box p { color: #dbe8f2; font-size: 1.04rem; line-height: 1.55; max-width: 850px; }
 
+
+    .output-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px; }
+    .output-card { padding: 18px; min-height: 245px; }
+    .output-card h3 { color: var(--accent-dark); font-size: 1.02rem; }
+    .output-card .type { color: var(--accent); text-transform: uppercase; letter-spacing: .1em; font-size: .66rem; font-weight: 850; margin-bottom: 9px; }
+    .output-card .small { color: var(--muted); font-size: .9rem; line-height: 1.45; }
+    .output-card .role { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 12px; color: var(--ink); font-size: .9rem; line-height: 1.45; }
+    .applications-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+    .application-card { min-height: 210px; }
+    .application-card h3 { color: var(--accent-dark); }
+    .application-card p { color: var(--muted); font-size: .95rem; line-height: 1.5; }
+    .application-note { margin-top: 18px; padding: 18px 20px; border: 1px solid var(--line); background: var(--paper); border-radius: 16px; color: var(--muted); font-size: .98rem; }
+    .application-note strong { color: var(--accent-dark); }
+    .writing-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .writing-card .writing-note { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 13px; color: var(--ink); font-weight: 650; }
+
     .insight { color: var(--accent-dark); font-weight: 800; margin-top: 14px; }
     .brief-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
     .brief-card { min-height: 205px; display: flex; flex-direction: column; }
@@ -132,7 +148,7 @@
     .article-body p { font-size: 1rem; margin-bottom: 16px; }
     .article-callout { margin: 24px 0; padding: 18px 20px; border-left: 4px solid var(--accent); background: var(--accent-soft); color: var(--accent-dark); font-weight: 820; border-radius: 12px; }
     .footer { border-top: 1px solid var(--line); margin-top: 80px; padding-top: 24px; color: var(--muted); display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: .92rem; }
-    @media (max-width: 960px) { .hero-grid,.grid-2,.grid-3,.grid-4,.trajectory-grid,.brief-grid,.writing-grid,.glance-grid,.proof-strip,.evidence-row,.invention-card { grid-template-columns: 1fr; } .trajectory-card:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -18px; transform: translateX(50%); } .flow { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); text-align: center; } .metric { grid-template-columns: 1fr; } .evidence-cell { border-right: 0; border-bottom: 1px solid var(--line); } .evidence-cell:last-child { border-bottom: 0; } }
+    @media (max-width: 960px) { .hero-grid,.grid-2,.grid-3,.grid-4,.trajectory-grid,.brief-grid,.writing-grid,.output-grid,.applications-grid,.glance-grid,.proof-strip,.evidence-row,.invention-card { grid-template-columns: 1fr; } .trajectory-card:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -18px; transform: translateX(50%); } .flow { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); text-align: center; } .metric { grid-template-columns: 1fr; } .evidence-cell { border-right: 0; border-bottom: 1px solid var(--line); } .evidence-cell:last-child { border-bottom: 0; } }
     @media (max-width: 680px) { .nav { flex-direction: column; align-items: flex-start; } .nav-links { justify-content: flex-start; gap: 10px 14px; } main { padding-top: 28px; } h1 { font-size: clamp(2.15rem, 12vw, 3.2rem); } .article { padding: 24px; } }
   </style>
 </head>
@@ -143,8 +159,10 @@
     <div class="nav-links">
       <a href="#evidence">Evidence Map</a>
       <a href="#trajectory">Trajectory</a>
+      <a href="#outputs">Outputs</a>
       <a href="#foundations">Foundations</a>
       <a href="#invention">Invention</a>
+      <a href="#applications">Applications</a>
       <a href="#writing">Writing</a>
       <a href="#briefs">Briefs</a>
       <a href="#evaluation">Evaluation</a>
@@ -178,7 +196,7 @@
         <div class="summary-list">
           <div class="summary-item"><b>1</b><p><strong>Focused question:</strong> how can technology support thinking without replacing agency?</p></div>
           <div class="summary-item"><b>2</b><p><strong>Four forms of evidence:</strong> behavior modeling, AI interaction study, verifier-mediated AI, and patent-pending reflective feedback.</p></div>
-          <div class="summary-item"><b>3</b><p><strong>Public framework:</strong> briefs, rubric, survey, and prototype direction for trustworthy AI tutoring.</p></div>
+          <div class="summary-item"><b>3</b><p><strong>Visible outputs:</strong> papers, invention work, public briefs, rubric, survey, and prototype direction for trustworthy AI tutoring.</p></div>
         </div>
       </aside>
     </div>
@@ -282,6 +300,47 @@
     </div>
   </section>
 
+
+  <section id="outputs">
+    <div class="section-heading">
+      <p class="eyebrow">Research outputs</p>
+      <h2>What has already come out of this research path.</h2>
+      <p>This section is intentionally compact. It gives admissions readers a quick view of the concrete work behind the lab: papers, studies, invention work, and public tools.</p>
+    </div>
+    <div class="output-grid">
+      <article class="panel output-card">
+        <p class="type">Technical paper</p>
+        <h3>CounterRefine</h3>
+        <p class="small">Verifier-mediated factual QA repair using answer-conditioned evidence and a guarded KEEP/REVISE step.</p>
+        <p class="role"><strong>Role in the lab:</strong> gives a technical model for checking before trusting an answer.</p>
+      </article>
+      <article class="panel output-card">
+        <p class="type">User study</p>
+        <h3>LLM Interaction Study</h3>
+        <p class="small">A study comparing passive, proactive, and collaborative ChatGPT-4o support for beginner programming tasks.</p>
+        <p class="role"><strong>Role in the lab:</strong> showed that interaction design matters, while raising the harder question of whether faster help means deeper learning.</p>
+      </article>
+      <article class="panel output-card">
+        <p class="type">Behavior model</p>
+        <h3>Student Decision Simulation</h3>
+        <p class="small">A 14-node narrative simulation modeling how hesitation and delay accumulate under academic stress.</p>
+        <p class="role"><strong>Role in the lab:</strong> frames learning behavior as a sequence of choices, not only an end result.</p>
+      </article>
+      <article class="panel output-card">
+        <p class="type">Related invention</p>
+        <h3>Rhythm-Based Reflective Feedback</h3>
+        <p class="small">A patent-pending system for non-performance-based rhythm indices and voluntary reflective prompts.</p>
+        <p class="role"><strong>Role in the lab:</strong> supports the design principle of awareness without forced compliance.</p>
+      </article>
+      <article class="panel output-card">
+        <p class="type">Public framework</p>
+        <h3>Explanation Rubric and Briefs</h3>
+        <p class="small">A public-facing rubric and six research briefs on AI tutoring, trust, agency, tone, and overreliance.</p>
+        <p class="role"><strong>Role in the lab:</strong> turns the research agenda into something teachers and students can discuss.</p>
+      </article>
+    </div>
+  </section>
+
   <section id="foundations">
     <div class="section-heading">
       <p class="eyebrow">Research foundations</p>
@@ -360,6 +419,38 @@
         <div class="invention-point"><b>Why it matters here</b><span>It shares the lab’s central design principle: support human agency without prescribing behavior, diagnosis, or productivity correction.</span></div>
       </div>
     </div>
+  </section>
+
+
+  <section id="applications">
+    <div class="section-heading">
+      <p class="eyebrow">Applications</p>
+      <h2>Where this research could matter.</h2>
+      <p>The lab is not trying to sell a finished product. It is identifying places where AI tutoring and reflective feedback should be evaluated by student reasoning, not only by speed, satisfaction, or correctness.</p>
+    </div>
+    <div class="applications-grid">
+      <article class="panel application-card">
+        <span class="number">01</span>
+        <h3>AI tutoring platforms</h3>
+        <p>Tutors could check evidence, surface uncertainty, and ask students to explain reasoning back before an answer feels final.</p>
+      </article>
+      <article class="panel application-card">
+        <span class="number">02</span>
+        <h3>Classroom AI literacy</h3>
+        <p>Teachers and students need language for noticing when AI supports understanding and when it encourages dependence.</p>
+      </article>
+      <article class="panel application-card">
+        <span class="number">03</span>
+        <h3>Student reflection tools</h3>
+        <p>Reflection systems could help students notice fragmented attention, avoidance, or over-guided thinking without turning those signals into grades.</p>
+      </article>
+      <article class="panel application-card">
+        <span class="number">04</span>
+        <h3>Evaluation and policy</h3>
+        <p>Schools evaluating AI tools should ask whether students retain agency, transfer, and judgment, not only whether the tool answers correctly.</p>
+      </article>
+    </div>
+    <div class="application-note"><strong>Design boundary:</strong> these applications are directions for evaluation and prototype design. The lab does not claim that every idea is already deployed; it makes the standards for responsible AI tutoring easier to test.</div>
   </section>
 
 
