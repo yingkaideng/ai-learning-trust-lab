@@ -83,7 +83,12 @@
     .trajectory-card:not(:last-child)::after { content: "→"; position: absolute; right: -14px; top: 42%; color: var(--accent); font-weight: 900; font-size: 1.1rem; z-index: 2; }
     .trajectory-card .source { color: var(--muted); font-size: .88rem; margin-top: 10px; }
     .foundation-card h3 { font-size: 1.15rem; }
-    .foundation-card .small { color: var(--muted); font-size: .92rem; margin-bottom: 12px; }
+    .foundation-card .small { color: var(--muted); font-size: .92rem; margin-bottom: 16px; }
+    .foundation-card .field { margin-top: 14px; }
+    .foundation-card .field-label { color: var(--accent); text-transform: uppercase; letter-spacing: .11em; font-size: .68rem; font-weight: 850; margin-bottom: 4px; }
+    .foundation-card .field-text { margin: 0; color: var(--ink); font-size: .96rem; line-height: 1.55; }
+    .foundation-card .field-text.muted-text { color: var(--muted); }
+    .foundation-card .led-here { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
     .insight { color: var(--accent-dark); font-weight: 800; margin-top: 14px; }
     .brief-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
     .brief-card { min-height: 205px; display: flex; flex-direction: column; }
@@ -218,29 +223,59 @@
     <div class="section-heading">
       <p class="eyebrow">Research foundations</p>
       <h2>The research behind the platform.</h2>
-      <p>Each foundation answers a different part of the same larger question: how should learning support be designed and evaluated?</p>
+      <p>Three earlier projects shaped the lab’s central question: how can AI support learning without replacing student thinking?</p>
     </div>
     <div class="grid-3">
       <article class="panel foundation-card">
         <span class="number">01</span>
         <h3>Student Decision Modeling</h3>
         <p class="small">Interactive narrative simulation of procrastination-related decision patterns.</p>
-        <p><strong>Research question:</strong> How does academic delay develop decision by decision under pressure?</p>
-        <p class="insight">Connection to the lab: AI tutoring should be studied as a sequence of student choices, not only a final answer.</p>
+        <div class="field">
+          <p class="field-label">What it studied</p>
+          <p class="field-text">How academic delay develops decision by decision under pressure.</p>
+        </div>
+        <div class="field">
+          <p class="field-label">What it showed</p>
+          <p class="field-text muted-text">Student behavior can shift through accumulating micro-decisions before failure becomes visible.</p>
+        </div>
+        <div class="field led-here">
+          <p class="field-label">How it led here</p>
+          <p class="field-text"><strong>AI tutoring should be evaluated as a sequence of student choices, not only by the final answer.</strong></p>
+        </div>
       </article>
       <article class="panel foundation-card">
         <span class="number">02</span>
         <h3>LLM Interaction Study</h3>
         <p class="small">Passive, proactive, and collaborative ChatGPT-4o support for programming tasks.</p>
-        <p><strong>Research question:</strong> Does the way an AI assistant interacts with students change performance and experience?</p>
-        <p class="insight">Connection to the lab: interaction design matters, but speed and satisfaction are not enough to measure learning.</p>
+        <div class="field">
+          <p class="field-label">What it studied</p>
+          <p class="field-text">Whether different AI interaction styles change how students solve programming tasks.</p>
+        </div>
+        <div class="field">
+          <p class="field-label">What it showed</p>
+          <p class="field-text muted-text">Collaborative support appeared to improve efficiency and user experience in a small pilot study.</p>
+        </div>
+        <div class="field led-here">
+          <p class="field-label">How it led here</p>
+          <p class="field-text"><strong>Speed and satisfaction are useful signals, but they are not enough. The next question is whether AI support strengthens reasoning.</strong></p>
+        </div>
       </article>
       <article class="panel foundation-card">
         <span class="number">03</span>
         <h3>CounterRefine</h3>
         <p class="small">Verifier-mediated answer repair for factual question answering.</p>
-        <p><strong>Research question:</strong> Can an AI system test its first answer against support and contradiction before committing?</p>
-        <p class="insight">Connection to the lab: AI tutors should verify before students are asked to trust.</p>
+        <div class="field">
+          <p class="field-label">What it studied</p>
+          <p class="field-text">Whether an AI system can test its first answer against support and contradiction before committing.</p>
+        </div>
+        <div class="field">
+          <p class="field-label">What it showed</p>
+          <p class="field-text muted-text">AI answers can be improved by treating the first response as a hypothesis to verify, not a final conclusion.</p>
+        </div>
+        <div class="field led-here">
+          <p class="field-label">How it led here</p>
+          <p class="field-text"><strong>AI tutors should not only answer students. They should help verify, revise, and expose uncertainty before students trust an explanation.</strong></p>
+        </div>
       </article>
     </div>
   </section>
