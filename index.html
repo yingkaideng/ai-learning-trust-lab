@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research platform studying how AI tutoring can strengthen student reasoning, preserve judgment, and reduce overreliance." />
   <style>
-    /* Admissions redesign step 3: admissions quick-read + visual compression, June 4 */
+    /* Admissions redesign step 4: AI readability + admissions first-screen polish, June 4 */
     :root {
       --bg: #f6f8fb;
       --paper: #ffffff;
@@ -32,20 +32,21 @@
     .nav-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 16px; font-size: .91rem; color: var(--muted); }
     .nav-links a:hover { color: var(--accent); }
     main { max-width: var(--max); margin: 0 auto; padding: 38px 22px 78px; }
-    section { scroll-margin-top: 88px; margin-top: 56px; }
+    section { scroll-margin-top: 88px; margin-top: 52px; }
     h1,h2,h3 { margin: 0; line-height: 1.08; letter-spacing: -.04em; }
-    h1 { font-size: clamp(2.45rem, 4.7vw, 4.25rem); max-width: 820px; line-height: 1.02; letter-spacing: -.06em; }
+    h1 { font-size: clamp(2.35rem, 4.35vw, 3.95rem); max-width: 760px; line-height: 1.03; letter-spacing: -.055em; }
+    .ai-word { font-family: Georgia, "Times New Roman", serif; font-weight: 900; letter-spacing: -.025em; }
     h2 { font-size: clamp(1.75rem, 3vw, 2.45rem); margin-bottom: 14px; }
     h3 { font-size: 1.06rem; margin-bottom: 9px; }
     p { margin: 0 0 15px; }
     .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-size: .76rem; font-weight: 820; margin-bottom: 12px; }
     .lead { color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.13rem); max-width: 720px; margin-top: 18px; line-height: 1.55; }
-    .hero { margin-top: 0; padding: 44px 0 34px; border-bottom: 1px solid var(--line); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.26fr) minmax(330px, .74fr); gap: 36px; align-items: stretch; }
-    .hero-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .hero { margin-top: 0; padding: 40px 0 32px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.32fr) minmax(330px, .68fr); gap: 36px; align-items: stretch; }
+    .hero-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
     .hero-card h3 { color: var(--accent-dark); font-size: 1.35rem; line-height: 1.2; letter-spacing: -.035em; }
 
-    .proof-strip { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 22px; max-width: 790px; }
+    .proof-strip { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 22px; max-width: 740px; }
     .proof-item { border: 1px solid var(--line); background: rgba(255,255,255,.74); border-radius: 14px; padding: 13px 14px; }
     .proof-item strong { display: block; color: var(--accent-dark); font-size: .88rem; line-height: 1.25; }
     .proof-item span { display: block; color: var(--muted); font-size: .82rem; line-height: 1.35; margin-top: 4px; }
@@ -130,12 +131,12 @@
   <section class="hero" aria-label="Homepage introduction">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Student-led research · AI tutoring · education trust</p>
-        <h1>Helping AI tutoring strengthen student reasoning.</h1>
-        <p class="lead">AI Learning Trust Lab is a student-led research platform studying how AI tutors can support understanding, preserve judgment, and reduce overreliance.</p>
+        <p class="eyebrow">Student-led research · AI tutoring · student reasoning</p>
+        <h1>Helping <span class="ai-word">AI</span> tutors strengthen student reasoning.</h1>
+        <p class="lead">AI Learning Trust Lab is a student-led research platform studying how artificial intelligence tutors can support understanding, preserve judgment, and reduce overreliance.</p>
         <div class="proof-strip" aria-label="Research basis summary">
           <div class="proof-item"><strong>Behavioral modeling</strong><span>How student decisions shift under pressure.</span></div>
-          <div class="proof-item"><strong>AI interaction study</strong><span>How support style changes learning experience.</span></div>
+          <div class="proof-item"><strong>AI interaction study</strong><span>How support style changes student experience.</span></div>
           <div class="proof-item"><strong>Verifier research</strong><span>How AI can test answers before trust.</span></div>
         </div>
         <div class="button-row">
@@ -146,10 +147,10 @@
       </div>
       <aside class="hero-card">
         <p class="eyebrow">What this lab shows</p>
-        <h3>A research path from student behavior to trustworthy AI tutoring.</h3>
+        <h3>A clear research path from student behavior to trustworthy <span class="ai-word">AI</span> tutoring.</h3>
         <div class="summary-list">
           <div class="summary-item"><b>1</b><p><strong>Clear question:</strong> how should AI tutors support thinking without replacing it?</p></div>
-          <div class="summary-item"><b>2</b><p><strong>Real research base:</strong> behavior modeling, LLM interaction design, and verifier-mediated AI.</p></div>
+          <div class="summary-item"><b>2</b><p><strong>Real research base:</strong> student behavior modeling, LLM interaction design, and verifier-mediated AI.</p></div>
           <div class="summary-item"><b>3</b><p><strong>Public output:</strong> briefs, rubric, survey, and prototype direction.</p></div>
         </div>
       </aside>
