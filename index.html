@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research platform studying how AI tutoring can strengthen student reasoning, preserve judgment, and reduce overreliance." />
   <style>
-    /* Step 12: Selected Writing full text uses explicit open-close buttons, June 4 */
+    /* Step 14: Selected Writing collapse fix with visible plus/minus controls, June 4 */
     :root {
       --bg: #f6f8fb;
       --paper: #ffffff;
@@ -127,9 +127,14 @@
     .writing-card summary::-webkit-details-marker { display: none; }
     .writing-card summary::after { content: " +"; color: var(--accent); }
     .writing-card details[open] summary::after { content: " –"; }
+    .essay-toggle { margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--accent-dark); padding: 8px 13px; font: inherit; font-size: .9rem; font-weight: 800; cursor: pointer; }
+    .essay-toggle::before { content: "+"; display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 900; line-height: 1; }
+    .essay-toggle[aria-expanded="true"]::before { content: "–"; }
+    .essay-reader { display: none; margin-top: 16px; }
+    .essay-reader.open { display: block; }
     .essay-excerpt { margin-top: 14px; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: .98rem; line-height: 1.72; }
     .essay-excerpt p { margin-bottom: 13px; }
-    .essay-full-text { margin-top: 16px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; max-height: 560px; overflow: auto; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: .96rem; line-height: 1.78; }
+    .essay-full-text { padding: 18px 20px; border: 1px solid var(--line); border-radius: 18px; background: #fbfdff; max-height: 560px; overflow: auto; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: .96rem; line-height: 1.78; }
     .essay-full-text h4 { font-family: Inter, system-ui, sans-serif; font-size: 1rem; margin: 0 0 14px; color: var(--ink); }
     .essay-full-text p { margin: 0 0 14px; }
     .essay-full-text .works { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--muted); }
