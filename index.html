@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research platform studying how AI tutoring can strengthen student reasoning, preserve judgment, and reduce overreliance." />
   <style>
-    /* Admissions redesign step 10: selected writing expanded with real excerpts, June 4 */
+    /* Step 12: Selected Writing full text uses explicit open-close buttons, June 4 */
     :root {
       --bg: #f6f8fb;
       --paper: #ffffff;
@@ -478,8 +478,8 @@
         <h3>Objectivity Is a Feeling</h3>
         <p class="muted">A psychology and philosophy essay on why the same AI answer can feel more objective when it arrives through a warmer, more responsive interaction.</p>
         <p class="writing-note">This belongs here because AI tutoring does not only deliver information. It creates the conditions under which students decide whether information deserves trust.</p>
-        <details>
-          <summary>Read full essay</summary>
+        <button class="essay-toggle" type="button" aria-expanded="false" aria-controls="essay-objectivity">Read full essay</button>
+        <div class="essay-reader" id="essay-objectivity">
           <div class="essay-full-text">
 <h4>Objectivity Is a Feeling: Reframing Truth as Trust</h4>
 <p>Objectivity is often described as the standard by which knowledge rises above emotion, identity, or perspective. It is assumed to be what remains when all subjectivity is stripped away. Yet this assumption becomes difficult to defend when we observe how often our perception of truth shifts not with the facts themselves, but with the tone, timing, or trustworthiness of their delivery. Identical claims may be judged reliable or suspicious depending on whether they are offered plainly, collaboratively, or with interpersonal sensitivity.</p>
@@ -529,15 +529,15 @@
 </div>
 </div>
           <p class="essay-reader-note">Full text is included in a collapsed reader so the main platform stays easy to scan.</p>
-        </details>
+        </div>
       </article>
       <article class="panel writing-card">
         <p class="eyebrow">Speech and restraint</p>
         <h3>Lucid Politeness</h3>
         <p class="muted">An ethics essay on why courtesy to ChatGPT can matter even when the machine cannot be harmed by rudeness.</p>
         <p class="writing-note">The point is not sentimentality toward AI. It is formation: a tool that never resists us can still train how we speak, command, wait, and revise.</p>
-        <details>
-          <summary>Read full essay</summary>
+        <button class="essay-toggle" type="button" aria-expanded="false" aria-controls="essay-politeness">Read full essay</button>
+        <div class="essay-reader" id="essay-politeness">
           <div class="essay-full-text">
 <h4>Lucid Politeness: Why Courtesy to ChatGPT Still Matters</h4>
 <p>A user begins with a human sentence: “Can you help me understand this?” Five minutes later, the same exchange has narrowed into commands: “fix this,” “wrong,” “do it again.” No one has been insulted in the ordinary sense. ChatGPT cannot feel humiliation, resentment, or moral injury. Yet something has still changed. The user is no longer practicing dialogue. He is practicing consequence-free command.</p>
@@ -582,15 +582,15 @@
 </div>
 </div>
           <p class="essay-reader-note">Full text is included in a collapsed reader so the writing can be read without taking over the page.</p>
-        </details>
+        </div>
       </article>
       <article class="panel writing-card">
         <p class="eyebrow">Origin essay</p>
         <h3>The Night I Asked a Machine for Help</h3>
         <p class="muted">A personal essay about a night when AI did not solve the writing problem, but made it possible to face the fear underneath it.</p>
         <p class="writing-note">That experience became one of the lab’s simplest standards: good AI support should return the student to thinking, not quietly take thinking away.</p>
-        <details>
-          <summary>Read full essay</summary>
+        <button class="essay-toggle" type="button" aria-expanded="false" aria-controls="essay-machine-help">Read full essay</button>
+        <div class="essay-reader" id="essay-machine-help">
           <div class="essay-full-text">
 <h4>The Night I Asked a Machine for Help</h4>
 <p>It was past midnight, the kind of night that feels too quiet, when silence presses on your chest and every thought grows louder than it should. My desk lamp carved a small circle of light across the keyboard, leaving the rest of my room in shadow. The clock ticked without hurry, calm as if time refused to care. I had been staring at a blank page for hours, fingers hovering above the keys, frozen.</p>
@@ -623,7 +623,7 @@
 <p>For a moment, something inside me unclenched. Maybe that’s when silence finally starts to sound like understanding.</p>
 </div>
           <p class="essay-reader-note">Full text is included here as the personal origin of the lab’s basic design standard: AI help should keep the learner present.</p>
-        </details>
+        </div>
       </article>
     </div>
   </section>
@@ -1110,5 +1110,19 @@
 
   <footer class="footer"><span>AI Learning Trust Lab</span><span>Student-led research on AI tutoring, reasoning, and trust.</span></footer>
 </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.essay-toggle').forEach(function (button) {
+        var target = document.getElementById(button.getAttribute('aria-controls'));
+        if (!target) return;
+        button.addEventListener('click', function () {
+          var isOpen = target.classList.toggle('open');
+          button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          button.textContent = isOpen ? 'Close full essay' : 'Read full essay';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
