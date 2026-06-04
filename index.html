@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research platform studying how AI tutoring can strengthen student reasoning, preserve judgment, and reduce overreliance." />
   <style>
-    /* Admissions redesign step 4: AI readability + admissions first-screen polish, June 4 */
+    /* Admissions redesign step 6: Harvard evidence map + related invention, June 4 */
     :root {
       --bg: #f6f8fb;
       --paper: #ffffff;
@@ -46,7 +46,7 @@
     .hero-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
     .hero-card h3 { color: var(--accent-dark); font-size: 1.35rem; line-height: 1.2; letter-spacing: -.035em; }
 
-    .proof-strip { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 22px; max-width: 740px; }
+    .proof-strip { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-top: 22px; max-width: 860px; }
     .proof-item { border: 1px solid var(--line); background: rgba(255,255,255,.74); border-radius: 14px; padding: 13px 14px; }
     .proof-item strong { display: block; color: var(--accent-dark); font-size: .88rem; line-height: 1.25; }
     .proof-item span { display: block; color: var(--muted); font-size: .82rem; line-height: 1.35; margin-top: 4px; }
@@ -77,8 +77,8 @@
     .tag { display: inline-flex; align-items: center; border-radius: 999px; background: var(--soft); color: var(--accent-dark); padding: 7px 12px; font-size: .86rem; font-weight: 720; }
     .number { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 34px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); font-weight: 820; letter-spacing: .04em; margin-bottom: 16px; }
     .trajectory { position: relative; }
-    .trajectory-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
-    .trajectory-card { padding: 20px; position: relative; min-height: 232px; }
+    .trajectory-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px; }
+    .trajectory-card { padding: 19px; position: relative; min-height: 238px; }
     .trajectory-card h3 { color: var(--accent-dark); }
     .trajectory-card:not(:last-child)::after { content: "→"; position: absolute; right: -14px; top: 42%; color: var(--accent); font-weight: 900; font-size: 1.1rem; z-index: 2; }
     .trajectory-card .source { color: var(--muted); font-size: .88rem; margin-top: 10px; }
@@ -89,6 +89,24 @@
     .foundation-card .field-text { margin: 0; color: var(--ink); font-size: .96rem; line-height: 1.55; }
     .foundation-card .field-text.muted-text { color: var(--muted); }
     .foundation-card .led-here { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .evidence-map { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 34px rgba(15, 23, 42, .04); }
+    .evidence-row { display: grid; grid-template-columns: 1.05fr 1.05fr 1.25fr; border-bottom: 1px solid var(--line); }
+    .evidence-row:last-child { border-bottom: 0; }
+    .evidence-row.header { background: #f0f5fa; color: var(--accent-dark); font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 850; }
+    .evidence-cell { padding: 16px 18px; border-right: 1px solid var(--line); }
+    .evidence-cell:last-child { border-right: 0; }
+    .evidence-cell strong { color: var(--accent-dark); }
+    .evidence-cell p { margin: 5px 0 0; color: var(--muted); font-size: .92rem; line-height: 1.45; }
+    .invention-card { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 24px; align-items: start; background: linear-gradient(135deg, #ffffff, #edf5fb); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .invention-card h3 { font-size: 1.45rem; color: var(--accent-dark); }
+    .invention-points { display: grid; gap: 14px; }
+    .invention-point { border-left: 3px solid var(--accent); padding-left: 14px; }
+    .invention-point b { display: block; color: var(--accent-dark); margin-bottom: 2px; }
+    .invention-point span { color: var(--muted); font-size: .95rem; line-height: 1.48; }
+    .why-box { background: var(--ink); color: #fff; border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+    .why-box .eyebrow { color: #b8d8f0; }
+    .why-box p { color: #dbe8f2; font-size: 1.04rem; line-height: 1.55; max-width: 850px; }
+
     .insight { color: var(--accent-dark); font-weight: 800; margin-top: 14px; }
     .brief-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
     .brief-card { min-height: 205px; display: flex; flex-direction: column; }
@@ -114,7 +132,7 @@
     .article-body p { font-size: 1rem; margin-bottom: 16px; }
     .article-callout { margin: 24px 0; padding: 18px 20px; border-left: 4px solid var(--accent); background: var(--accent-soft); color: var(--accent-dark); font-weight: 820; border-radius: 12px; }
     .footer { border-top: 1px solid var(--line); margin-top: 80px; padding-top: 24px; color: var(--muted); display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: .92rem; }
-    @media (max-width: 960px) { .hero-grid,.grid-2,.grid-3,.grid-4,.trajectory-grid,.brief-grid,.glance-grid,.proof-strip { grid-template-columns: 1fr; } .trajectory-card:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -18px; transform: translateX(50%); } .flow { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); text-align: center; } .metric { grid-template-columns: 1fr; } }
+    @media (max-width: 960px) { .hero-grid,.grid-2,.grid-3,.grid-4,.trajectory-grid,.brief-grid,.glance-grid,.proof-strip,.evidence-row,.invention-card { grid-template-columns: 1fr; } .trajectory-card:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -18px; transform: translateX(50%); } .flow { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); text-align: center; } .metric { grid-template-columns: 1fr; } .evidence-cell { border-right: 0; border-bottom: 1px solid var(--line); } .evidence-cell:last-child { border-bottom: 0; } }
     @media (max-width: 680px) { .nav { flex-direction: column; align-items: flex-start; } .nav-links { justify-content: flex-start; gap: 10px 14px; } main { padding-top: 28px; } h1 { font-size: clamp(2.15rem, 12vw, 3.2rem); } .article { padding: 24px; } }
   </style>
 </head>
@@ -123,8 +141,10 @@
   <nav class="nav" aria-label="Main navigation">
     <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span>AI Learning Trust Lab</span></a>
     <div class="nav-links">
+      <a href="#evidence">Evidence Map</a>
       <a href="#trajectory">Trajectory</a>
       <a href="#foundations">Foundations</a>
+      <a href="#invention">Invention</a>
       <a href="#briefs">Briefs</a>
       <a href="#evaluation">Evaluation</a>
       <a href="#rubric">Rubric</a>
@@ -138,25 +158,26 @@
       <div>
         <p class="eyebrow">Student-led research · AI tutoring · student reasoning</p>
         <h1>Helping <span class="ai-word">AI</span> tutors strengthen student reasoning.</h1>
-        <p class="lead">AI Learning Trust Lab is a student-led research platform studying how artificial intelligence tutors can support understanding, preserve judgment, and reduce overreliance.</p>
+        <p class="lead">AI Learning Trust Lab studies how intelligent systems can support understanding, preserve judgment, and reduce overreliance, with a focus on AI tutoring.</p>
         <div class="proof-strip" aria-label="Research basis summary">
           <div class="proof-item"><strong>Behavioral modeling</strong><span>How student decisions shift under pressure.</span></div>
           <div class="proof-item"><strong>AI interaction study</strong><span>How support style changes student experience.</span></div>
           <div class="proof-item"><strong>Verifier research</strong><span>How AI can test answers before trust.</span></div>
+          <div class="proof-item"><strong>Patent work</strong><span>How systems can support reflection without compliance.</span></div>
         </div>
         <div class="button-row">
-          <a class="button primary" href="#trajectory">View research trajectory</a>
+          <a class="button primary" href="#evidence">View evidence map</a>
           <a class="button" href="#briefs">Read the briefs</a>
           <a class="button" href="#rubric">See the rubric</a>
         </div>
       </div>
       <aside class="hero-card">
         <p class="eyebrow">What this lab shows</p>
-        <h3>A clear research path from student behavior to trustworthy <span class="ai-word">AI</span> tutoring.</h3>
+        <h3>A focused research agenda, not a collection of separate projects.</h3>
         <div class="summary-list">
-          <div class="summary-item"><b>1</b><p><strong>Clear question:</strong> how should AI tutors support thinking without replacing it?</p></div>
-          <div class="summary-item"><b>2</b><p><strong>Real research base:</strong> student behavior modeling, LLM interaction design, and verifier-mediated AI.</p></div>
-          <div class="summary-item"><b>3</b><p><strong>Public output:</strong> briefs, rubric, survey, and prototype direction.</p></div>
+          <div class="summary-item"><b>1</b><p><strong>Focused question:</strong> how can technology support thinking without replacing agency?</p></div>
+          <div class="summary-item"><b>2</b><p><strong>Four forms of evidence:</strong> behavior modeling, AI interaction study, verifier-mediated AI, and patent-pending reflective feedback.</p></div>
+          <div class="summary-item"><b>3</b><p><strong>Public framework:</strong> briefs, rubric, survey, and prototype direction for trustworthy AI tutoring.</p></div>
         </div>
       </aside>
     </div>
@@ -185,11 +206,46 @@
   </section>
 
 
+  <section id="evidence">
+    <div class="section-heading">
+      <p class="eyebrow">Evidence map</p>
+      <h2>One question, four forms of evidence.</h2>
+      <p>The lab brings together four related strands around one question: how can intelligent systems support human thinking without replacing human agency?</p>
+    </div>
+    <div class="evidence-map" role="table" aria-label="Evidence map connecting research projects to the lab">
+      <div class="evidence-row header" role="row">
+        <div class="evidence-cell" role="columnheader">What Kai studied</div>
+        <div class="evidence-cell" role="columnheader">What it shows</div>
+        <div class="evidence-cell" role="columnheader">How it connects to the lab</div>
+      </div>
+      <div class="evidence-row" role="row">
+        <div class="evidence-cell"><strong>Student decisions under pressure</strong><p>Narrative decision simulation</p></div>
+        <div class="evidence-cell">Learning behavior unfolds decision by decision.</div>
+        <div class="evidence-cell">AI tutoring should evaluate student thinking across the interaction, not only final answers.</div>
+      </div>
+      <div class="evidence-row" role="row">
+        <div class="evidence-cell"><strong>AI interaction style</strong><p>Passive, proactive, and collaborative support</p></div>
+        <div class="evidence-cell">How an AI responds shapes user experience and performance.</div>
+        <div class="evidence-cell">Tutoring design matters as much as answer content.</div>
+      </div>
+      <div class="evidence-row" role="row">
+        <div class="evidence-cell"><strong>Verifier-mediated AI</strong><p>CounterRefine</p></div>
+        <div class="evidence-cell">Models can test answers before committing.</div>
+        <div class="evidence-cell">AI tutors should verify, revise, and expose uncertainty.</div>
+      </div>
+      <div class="evidence-row" role="row">
+        <div class="evidence-cell"><strong>Rhythm-based reflective feedback</strong><p>Patent-pending related invention</p></div>
+        <div class="evidence-cell">Systems can support self-awareness without forcing action.</div>
+        <div class="evidence-cell">AI tutors should preserve agency instead of pushing compliance.</div>
+      </div>
+    </div>
+  </section>
+
   <section id="trajectory" class="trajectory">
     <div class="section-heading">
       <p class="eyebrow">Research trajectory</p>
-      <h2>One research trajectory, four steps.</h2>
-      <p>Each project moved the question closer to AI tutoring: from how students make decisions, to how AI interacts, to how AI verifies answers, to how tutoring systems should protect student reasoning.</p>
+      <h2>One research trajectory, five steps.</h2>
+      <p>Each project moved the question closer to AI tutoring: from how students make decisions, to how AI interacts, to how AI verifies answers, to how digital systems can support reflection without replacing agency.</p>
     </div>
     <div class="trajectory-grid">
       <article class="trajectory-card">
@@ -212,8 +268,14 @@
       </article>
       <article class="trajectory-card">
         <span class="number">04</span>
+        <h3>Rhythm-based reflective feedback</h3>
+        <p class="muted">Developed a patent-pending system for non-directive, non-performance-based self-awareness feedback.</p>
+        <p class="source">Related invention · rhythm indices · voluntary prompts</p>
+      </article>
+      <article class="trajectory-card">
+        <span class="number">05</span>
         <h3>AI Learning Trust Lab</h3>
-        <p class="muted">Turns these research threads into an education trust framework for AI tutoring.</p>
+        <p class="muted">Brings these threads together to study how AI tutoring can support reasoning without replacing judgment.</p>
         <p class="source">Briefs · rubric · survey · prototype direction</p>
       </article>
     </div>
@@ -277,6 +339,25 @@
           <p class="field-text"><strong>AI tutors should not only answer students. They should help verify, revise, and expose uncertainty before students trust an explanation.</strong></p>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section id="invention">
+    <div class="section-heading">
+      <p class="eyebrow">Related invention</p>
+      <h2>Rhythm-Based Reflective Feedback System.</h2>
+      <p>This patent-pending work extends the same design principle into behavioral feedback: intelligent systems should support awareness and judgment without turning human behavior into productivity correction.</p>
+    </div>
+    <div class="invention-card">
+      <div>
+        <h3>A system for reflection without compliance.</h3>
+        <p class="muted">The invention analyzes multimodal interaction rhythms and generates voluntary, non-directive reflective prompts. It is related to the lab because both ask how technology can help users notice, reflect, and judge without being pushed toward automatic dependence or forced behavior change.</p>
+      </div>
+      <div class="invention-points">
+        <div class="invention-point"><b>What it does</b><span>Analyzes digital interaction signals to generate self-awareness scores and longitudinal rhythm patterns.</span></div>
+        <div class="invention-point"><b>What it measures</b><span>Non-performance-based rhythm indices such as Rhythmic Disruption Index, Emotional Avoidance Entropy, and Cognitive Inertia Score.</span></div>
+        <div class="invention-point"><b>Why it matters here</b><span>It shares the lab’s central design principle: support human agency without prescribing behavior, diagnosis, or productivity correction.</span></div>
+      </div>
     </div>
   </section>
 
@@ -739,6 +820,14 @@
       <div class="flow" aria-label="Prototype workflow">
         <div class="flow-step">Draft AI explanation</div><div class="arrow">→</div><div class="flow-step">Evidence + uncertainty check</div><div class="arrow">→</div><div class="flow-step">Thinking-supportive revision</div>
       </div>
+    </div>
+  </section>
+
+  <section id="why-this-matters">
+    <div class="why-box">
+      <p class="eyebrow">Why this matters</p>
+      <h2>AI tutoring should be judged by what happens to student reasoning after the answer appears.</h2>
+      <p>Accuracy, speed, clarity, and supportive tone all matter. But the deeper test is whether the student leaves with more capacity to explain, question, transfer, and judge. AI Learning Trust Lab studies how intelligent systems can make help more reflective, not more replacing.</p>
     </div>
   </section>
 
