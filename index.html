@@ -140,6 +140,11 @@
     .essay-full-text .works { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--muted); }
     .essay-reader-note { color: var(--muted); font-size: .84rem; margin-top: 10px; }
 
+
+    .brief-open-button { margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--accent-dark); padding: 8px 13px; font-size: .9rem; font-weight: 850; text-decoration: none; width: fit-content; }
+    .brief-open-button::after { content: "↗"; font-size: .84rem; color: var(--accent); }
+    .brief-open-button:hover { border-color: rgba(42, 109, 159, .35); background: var(--accent-soft); }
+    .brief-full-heading, .brief-full-source { display: none; }
     .insight { color: var(--accent-dark); font-weight: 800; margin-top: 14px; }
     .brief-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
     .brief-card { min-height: 205px; display: flex; flex-direction: column; }
@@ -641,19 +646,19 @@
       <p>Each brief turns one part of the lab’s research agenda into a clear idea about AI tutoring, trust, and student judgment.</p>
     </div>
     <div class="brief-grid">
-      <article class="brief-card"><p class="eyebrow">Brief 01</p><h3><a href="#brief-01">Why Correct Answers Are Not the Same as Understanding</a></h3><p class="label">Purpose</p><p class="muted">Why AI tutoring should be evaluated by student reasoning, not answer accuracy alone.</p><p class="label">Key insight</p><p class="tagline">Answer-level accuracy is not learner-level understanding.</p></article>
-      <article class="brief-card"><p class="eyebrow">Brief 02</p><h3><a href="#brief-02">When AI Makes Students Feel Understood</a></h3><p class="label">Purpose</p><p class="muted">How emotional resonance can earn trust before learning has happened.</p><p class="label">Key insight</p><p class="tagline">Feeling understood can become a shortcut to trust.</p></article>
-      <article class="brief-card"><p class="eyebrow">Brief 03</p><h3><a href="#brief-03">What Makes an AI Explanation Trustworthy?</a></h3><p class="label">Purpose</p><p class="muted">From fluent answers to reflective trust.</p><p class="label">Key insight</p><p class="tagline">A weak explanation closes the loop too quickly.</p></article>
-      <article class="brief-card"><p class="eyebrow">Brief 04</p><h3><a href="#brief-04">The Biggest Risk of AI Tutoring Is Not Error, but Overreliance</a></h3><p class="label">Purpose</p><p class="muted">Why students may depend on AI because it makes thinking feel easier.</p><p class="label">Key insight</p><p class="tagline">Which parts of thinking did the student hand over?</p></article>
-      <article class="brief-card"><p class="eyebrow">Brief 05</p><h3><a href="#brief-05">Tone Feels Truer Than Truth</a></h3><p class="label">Purpose</p><p class="muted">Why the way an AI tutor sounds can change whether students trust it.</p><p class="label">Key insight</p><p class="tagline">Tone should make thinking safer, not make judgment unnecessary.</p></article>
-      <article class="brief-card"><p class="eyebrow">Brief 06</p><h3><a href="#brief-06">If Everything Understands Me, Do I Still Judge?</a></h3><p class="label">Purpose</p><p class="muted">Preserving student judgment in an age of emotionally fluent AI tutors.</p><p class="label">Key insight</p><p class="tagline">Will students still practice understanding for themselves?</p></article>
+      <article class="brief-card"><p class="eyebrow">Brief 01</p><h3><a class="brief-open" data-brief-id="brief-01" href="#brief-01">Why Correct Answers Are Not the Same as Understanding</a></h3><p class="label">Purpose</p><p class="muted">Why AI tutoring should be evaluated by student reasoning, not answer accuracy alone.</p><p class="label">Key insight</p><p class="tagline">Answer-level accuracy is not learner-level understanding.</p><a class="brief-open brief-open-button" data-brief-id="brief-01" href="#brief-01">Read full brief</a></article>
+      <article class="brief-card"><p class="eyebrow">Brief 02</p><h3><a class="brief-open" data-brief-id="brief-02" href="#brief-02">When AI Makes Students Feel Understood</a></h3><p class="label">Purpose</p><p class="muted">How emotional resonance can earn trust before learning has happened.</p><p class="label">Key insight</p><p class="tagline">Feeling understood can become a shortcut to trust.</p><a class="brief-open brief-open-button" data-brief-id="brief-02" href="#brief-02">Read full brief</a></article>
+      <article class="brief-card"><p class="eyebrow">Brief 03</p><h3><a class="brief-open" data-brief-id="brief-03" href="#brief-03">What Makes an AI Explanation Trustworthy?</a></h3><p class="label">Purpose</p><p class="muted">From fluent answers to reflective trust.</p><p class="label">Key insight</p><p class="tagline">A weak explanation closes the loop too quickly.</p><a class="brief-open brief-open-button" data-brief-id="brief-03" href="#brief-03">Read full brief</a></article>
+      <article class="brief-card"><p class="eyebrow">Brief 04</p><h3><a class="brief-open" data-brief-id="brief-04" href="#brief-04">The Biggest Risk of AI Tutoring Is Not Error, but Overreliance</a></h3><p class="label">Purpose</p><p class="muted">Why students may depend on AI because it makes thinking feel easier.</p><p class="label">Key insight</p><p class="tagline">Which parts of thinking did the student hand over?</p><a class="brief-open brief-open-button" data-brief-id="brief-04" href="#brief-04">Read full brief</a></article>
+      <article class="brief-card"><p class="eyebrow">Brief 05</p><h3><a class="brief-open" data-brief-id="brief-05" href="#brief-05">Tone Feels Truer Than Truth</a></h3><p class="label">Purpose</p><p class="muted">Why the way an AI tutor sounds can change whether students trust it.</p><p class="label">Key insight</p><p class="tagline">Tone should make thinking safer, not make judgment unnecessary.</p><a class="brief-open brief-open-button" data-brief-id="brief-05" href="#brief-05">Read full brief</a></article>
+      <article class="brief-card"><p class="eyebrow">Brief 06</p><h3><a class="brief-open" data-brief-id="brief-06" href="#brief-06">If Everything Understands Me, Do I Still Judge?</a></h3><p class="label">Purpose</p><p class="muted">Preserving student judgment in an age of emotionally fluent AI tutors.</p><p class="label">Key insight</p><p class="tagline">Will students still practice understanding for themselves?</p><a class="brief-open brief-open-button" data-brief-id="brief-06" href="#brief-06">Read full brief</a></article>
     </div>
 
-    <div class="section-heading" style="margin-top:52px;">
+    <div class="section-heading brief-full-heading" style="margin-top:52px;">
       <p class="eyebrow">Full brief texts</p>
       <h2>Read the complete briefs.</h2>
     </div>
-    <article class="article" id="brief-01">
+    <article class="article brief-full-source" id="brief-01">
         <header class="article-header">
           <p class="eyebrow">Research Brief 01</p>
           <h2>Why Correct Answers Are Not the Same as Understanding</h2>
@@ -744,7 +749,7 @@
         </div>
       </article>
 
-<article class="article" id="brief-02">
+<article class="article brief-full-source" id="brief-02">
         <header class="article-header">
           <p class="eyebrow">Research Brief 02</p>
           <h2>When AI Makes Students Feel Understood</h2>
@@ -789,7 +794,7 @@
         </div>
       </article>
 
-<article class="article" id="brief-03">
+<article class="article brief-full-source" id="brief-03">
         <header class="article-header">
           <p class="eyebrow">Research Brief 03</p>
           <h2>What Makes an AI Explanation Trustworthy?</h2>
@@ -848,7 +853,7 @@
         </div>
       </article>
 
-<article class="article" id="brief-04">
+<article class="article brief-full-source" id="brief-04">
         <header class="article-header">
           <p class="eyebrow">Research Brief 04</p>
           <h2>The Biggest Risk of AI Tutoring Is Not Error, but Overreliance</h2>
@@ -909,7 +914,7 @@
         </div>
       </article>
 
-<article class="article" id="brief-05">
+<article class="article brief-full-source" id="brief-05">
         <header class="article-header">
           <p class="eyebrow">Research Brief 05</p>
           <h2>Tone Feels Truer Than Truth</h2>
@@ -968,7 +973,7 @@
         </div>
       </article>
 
-<article class="article" id="brief-06">
+<article class="article brief-full-source" id="brief-06">
         <header class="article-header">
           <p class="eyebrow">Research Brief 06</p>
           <h2>If Everything Understands Me, Do I Still Judge?</h2>
@@ -1119,6 +1124,26 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+
+      document.querySelectorAll('.brief-open').forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          var briefId = link.getAttribute('data-brief-id');
+          var source = document.getElementById(briefId);
+          if (!source) return;
+          var titleNode = source.querySelector('h2');
+          var title = titleNode ? titleNode.textContent.trim() : 'AI Learning Trust Lab Brief';
+          var css = '';
+          document.querySelectorAll('style').forEach(function (style) { css += style.innerHTML + '\n'; });
+          css += '\nbody{background:#f7fafc;} main{max-width:900px;margin:0 auto;padding:54px 26px 80px;} .brief-full-source{display:block!important;} .article{display:block!important;margin-top:0;} .article-body{max-width:760px;} .back-note{font:700 13px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#2a6d9f;margin-bottom:18px;}';
+          var popup = window.open('', '_blank', 'noopener,noreferrer');
+          if (!popup) { window.location.hash = briefId; return; }
+          popup.document.open();
+          popup.document.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + title.replace(/</g, '&lt;') + ' | AI Learning Trust Lab</title><style>' + css + '</style></head><body><main><div class="back-note">AI Learning Trust Lab · Research Brief</div>' + source.outerHTML + '</main></body></html>');
+          popup.document.close();
+        });
+      });
+
       document.querySelectorAll('.essay-toggle').forEach(function (button) {
         var target = document.getElementById(button.getAttribute('aria-controls'));
         if (!target) return;
