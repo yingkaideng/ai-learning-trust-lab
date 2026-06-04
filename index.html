@@ -1136,11 +1136,13 @@
           var css = '';
           document.querySelectorAll('style').forEach(function (style) { css += style.innerHTML + '\n'; });
           css += '\nbody{background:#f7fafc;} main{max-width:900px;margin:0 auto;padding:54px 26px 80px;} .brief-full-source{display:block!important;} .article{display:block!important;margin-top:0;} .article-body{max-width:760px;} .back-note{font:700 13px Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#2a6d9f;margin-bottom:18px;}';
-          var popup = window.open('', '_blank', 'noopener,noreferrer');
+          var safeTitle = title.replace(/</g, '&lt;');
+          var html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + safeTitle + ' | AI Learning Trust Lab</title><style>' + css + '</style></head><body><main><div class="back-note">AI Learning Trust Lab · Research Brief</div>' + source.outerHTML + '</main></body></html>';
+          var blob = new Blob([html], { type: 'text/html' });
+          var url = URL.createObjectURL(blob);
+          var popup = window.open(url, '_blank');
           if (!popup) { window.location.hash = briefId; return; }
-          popup.document.open();
-          popup.document.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + title.replace(/</g, '&lt;') + ' | AI Learning Trust Lab</title><style>' + css + '</style></head><body><main><div class="back-note">AI Learning Trust Lab · Research Brief</div>' + source.outerHTML + '</main></body></html>');
-          popup.document.close();
+          setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
         });
       });
 
