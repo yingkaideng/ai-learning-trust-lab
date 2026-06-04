@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research and public education platform studying how AI tutoring can support student reasoning without replacing it." />
   <style>
-    /* Compact homepage typography update: June 4 */
+    /* Core question hierarchy fix: June 4 */
     :root {
       --bg: #f7f8fa;
       --paper: #ffffff;
@@ -191,37 +191,51 @@
     .button.primary:hover { background: var(--accent-dark); color: white; }
 
     .hero-question {
-      padding-left: 24px;
-      border-left: 2px solid var(--line);
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.55;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px 30px 26px;
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.055);
+      color: var(--ink);
     }
 
     .hero-question b {
       display: block;
-      color: var(--ink);
-      font-size: 1.06rem;
-      line-height: 1.35;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
+      color: var(--accent);
+      font-size: 0.72rem;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 820;
+    }
+
+    .question-text {
+      display: block;
+      color: var(--accent-dark);
+      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      line-height: 1.18;
+      letter-spacing: -0.045em;
+      font-weight: 800;
+      max-width: 560px;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 28px;
+      gap: 9px;
+      margin-top: 24px;
     }
 
     .tag {
       display: inline-flex;
       border-radius: 999px;
-      padding: 7px 11px;
-      background: var(--soft);
-      color: #445165;
-      font-size: 0.84rem;
-      font-weight: 650;
+      padding: 7px 12px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 720;
+      border: 1px solid rgba(38, 95, 143, 0.08);
     }
 
     .panel, .brief-card, .article, .mini-card {
@@ -425,7 +439,7 @@
     @media (max-width: 900px) {
       .hero-lower, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
       .hero { padding-top: 44px; }
-      .hero-question { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 20px; }
+      .hero-question { padding: 24px; }
       .flow { grid-template-columns: 1fr; }
       .arrow { transform: rotate(90deg); text-align: center; }
       .metric { grid-template-columns: 1fr; }
@@ -471,16 +485,16 @@
               <a class="button" href="#rubric">View Rubric v1</a>
               <a class="button" href="#current">See Current Work</a>
             </div>
+          </div>
+          <div class="hero-question">
+            <b>Core question</b>
+            <span class="question-text">How can AI tutors strengthen student reasoning instead of simply delivering faster answers?</span>
             <div class="hero-tags" aria-label="Research themes">
               <span class="tag">Trustworthy explanations</span>
               <span class="tag">Student agency</span>
               <span class="tag">Overreliance risk</span>
               <span class="tag">Verifier-mediated tutoring</span>
             </div>
-          </div>
-          <div class="hero-question">
-            <b>Core question</b>
-            If students increasingly rely on AI for help, how can these systems build reasoning instead of simply delivering faster answers?
           </div>
         </div>
       </div>
