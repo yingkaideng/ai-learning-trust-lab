@@ -65,6 +65,8 @@
       gap: 10px;
       font-weight: 760;
       letter-spacing: -0.02em;
+      white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .brand-mark {
@@ -78,7 +80,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 18px;
+      gap: 16px;
       font-size: 0.92rem;
       color: var(--muted);
     }
@@ -452,6 +454,25 @@
       h1 { font-size: clamp(2.05rem, 11vw, 3.15rem); }
       .article { padding: 24px; }
     }
+  
+    /* Nav brand one-line fix: June 4 */
+    /* Research Brief 02 added: June 4 */
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+      }
+      .brand {
+        font-size: 0.95rem;
+      }
+      .brand-mark {
+        width: 26px;
+        height: 26px;
+      }
+      .nav-links {
+        gap: 10px 14px;
+        font-size: 0.86rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -480,7 +501,7 @@
           <h1>Helping AI tutoring strengthen student reasoning.</h1>
           <p class="lead">AI Learning Trust Lab studies how AI tutors can support learning without quietly replacing the student’s own thinking.</p>
           <div class="button-row">
-            <a class="button primary" href="#briefs">Read the first brief</a>
+            <a class="button primary" href="#briefs">Read the research briefs</a>
             <a class="button" href="#rubric">View the evaluation rubric</a>
             <a class="button" href="#current">See current work</a>
           </div>
@@ -584,8 +605,8 @@
         <article class="brief-card featured">
           <span class="number">01</span>
           <h3>Research Briefs</h3>
-          <p class="muted">Short, high-quality public articles on AI tutoring, trustworthy explanations, student overreliance, and verifier-mediated learning.</p>
-          <p><a class="button" href="#briefs">View Brief 01 →</a></p>
+          <p class="muted">Public research briefs on AI tutoring, student reasoning, emotional resonance, overreliance, and trustworthy explanations.</p>
+          <p><a class="button" href="#briefs">View research briefs →</a></p>
         </article>
         <article class="brief-card">
           <span class="number">02</span>
@@ -606,7 +627,7 @@
       <div class="section-heading">
         <p class="eyebrow">Research Briefs</p>
         <h2>Public-facing research notes on AI tutoring, trust, and student reasoning.</h2>
-        <p>The first brief establishes the central premise of the lab: AI tutoring should be evaluated not only by the correctness of its answers, but by whether it strengthens the learner’s ability to reason.</p>
+        <p>These briefs develop the lab’s central premise: AI tutoring should be evaluated not only by answer accuracy or user satisfaction, but by whether it strengthens student reasoning, judgment, and independent understanding.</p>
       </div>
 
       <article class="article" id="brief-01">
@@ -700,21 +721,66 @@
         </div>
       </article>
 
+      <article class="article" id="brief-02">
+        <header class="article-header">
+          <p class="eyebrow">Research Brief 02</p>
+          <h2>When AI Makes Students Feel Understood</h2>
+          <p class="subtitle">How emotional resonance can earn trust before learning has happened</p>
+        </header>
+        <div class="article-body">
+          <p>An AI tutor does not need to truly understand a student to make the student feel understood. That is what makes it powerful, and also what makes it difficult to evaluate.</p>
+
+          <p>When a student asks for help, the system does more than deliver information. It creates an atmosphere. It may respond with patience, soften the student’s frustration, and frame the problem as something manageable. It may say, “Let’s take this one step at a time,” or “It makes sense that this feels confusing.” Before the student has learned anything new, the emotional pressure around the task has already changed. The system feels safe.</p>
+
+          <p>That safety can matter. Learning often begins when a student feels calm enough to stay with difficulty instead of escaping it. A harsh explanation can make a student retreat, while a patient one can keep them engaged. Good teachers understand this. They know that students rarely learn well when they feel embarrassed by confusion.</p>
+
+          <p>But there is a difference between creating the conditions for learning and creating the feeling that learning has already happened. AI tutoring blurs that line because it can simulate the surface of understanding almost instantly. It can mirror a student’s phrasing, avoid judgment, and respond in a tone that feels patient and personally attuned. The student may begin to trust the system not because it has proved educationally reliable, but because it has made confusion feel less lonely.</p>
+
+          <div class="article-callout">Feeling understood can become a shortcut to trust.</div>
+
+          <p>This idea grows out of my broader work in <em>Who Do You Trust to Understand You?</em>, where I examine how AI responses can feel personal through tone, rhythm, mirroring, and emotional resonance. The book describes how easily a person can mistake being echoed for being understood, especially when the response arrives in a voice that feels calm, precise, and nonjudgmental.</p>
+
+          <p>In tutoring, this matters because students rarely come to AI with purely academic needs. They come with stress, embarrassment, fatigue, and the quiet fear that they are behind. A student asking, “Can you explain this?” may also be asking, “Am I stupid for not getting this yet?” AI is very good at answering that second question gently. It can reassure the student, normalize confusion, and make the struggle feel manageable.</p>
+
+          <p>In the best case, that reassurance becomes a bridge into reasoning. The student relaxes enough to try again. In the weaker case, reassurance replaces reasoning. A student asks why they keep getting a chemistry problem wrong, and the AI responds, “This topic is confusing for a lot of students, so don’t worry. You’re on the right track.” The student feels better, but the misconception remains hidden.</p>
+
+          <p>A more trustworthy tutor would use the same warmth differently: “This is a common place to get stuck. Let’s check one specific step. Are you treating the coefficient and the subscript as if they mean the same thing?” The difference is subtle but important. The first response comforts the student around the problem. The second response helps the student re-enter the problem.</p>
+
+          <p>That is what trustworthy AI tutoring should do. Emotional support should not float above the learning process. It should guide the student back into it.</p>
+
+          <p>This is why tone alone cannot be treated as evidence of tutoring quality. A response may sound caring without being pedagogically useful. It may feel personal without identifying the student’s misconception. It may reduce anxiety without improving understanding. At the same time, the answer is not to make AI tutors cold or mechanical. Tone matters because students are more likely to keep thinking when they do not feel judged. The danger is not warmth itself. The danger is warmth without accountability.</p>
+
+          <p><strong>A trustworthy AI tutor should make students feel supported enough to think, not comfortable enough to stop thinking.</strong></p>
+
+          <p>That distinction should change how we evaluate educational AI. If we only ask whether students liked the AI tutor, we may reward the system that feels easiest to trust. If we only ask whether the explanation sounded clear, we may miss whether the student actually learned. Student satisfaction matters, but it cannot be the final measure.</p>
+
+          <p>A better evaluation would ask what happened after the student felt understood. Did the student explain the idea more clearly? Did they notice the mistake in their original reasoning? Did they ask a sharper follow-up question? Did they become more willing to attempt the next problem independently? Did the AI’s warmth lead to deeper thinking, or did it simply make the student feel finished?</p>
+
+          <p>These questions separate emotional resonance from educational value. The best AI tutor is not the one that always says the most reassuring thing. It is the one that knows how to turn reassurance into movement. It helps the student go from “I feel seen” to “I can see the concept more clearly.”</p>
+
+          <p>That is a much higher standard. It means AI tutoring should not be designed only to sound supportive. It should be designed to make support accountable to learning. If a system tells a student, “You’re doing fine,” it should also help the student discover what “fine” means: where their reasoning is strong, where it is fragile, and what they should test next.</p>
+
+          <p>This is part of the work of AI Learning Trust Lab: to study the difference between explanations that feel trustworthy and explanations that actually support student reasoning. The distinction matters because AI will only become more emotionally fluent. Future systems will sound warmer, more personal, more patient, and more adaptive. Students may increasingly feel understood by tools that do not truly understand them.</p>
+
+          <p>That feeling should not be dismissed. It may help students begin. But it should not be mistaken for the goal. In education, the point is not for the tutor to sound like it understands. The point is for the student to understand more clearly.</p>
+        </div>
+      </article>
+
       <div class="grid-3" style="margin-top: 22px;">
         <article class="brief-card">
-          <p class="eyebrow">Next brief</p>
-          <h3>When AI Makes Students Feel Understood</h3>
-          <p class="muted">How emotional resonance can create trust before understanding.</p>
+          <p class="eyebrow">Brief 01</p>
+          <h3><a href="#brief-01">Why Correct Answers Are Not the Same as Understanding</a></h3>
+          <p class="muted">Why AI tutoring should be evaluated by student reasoning, not answer accuracy alone.</p>
+        </article>
+        <article class="brief-card">
+          <p class="eyebrow">Brief 02</p>
+          <h3><a href="#brief-02">When AI Makes Students Feel Understood</a></h3>
+          <p class="muted">How emotional resonance can earn trust before learning has happened.</p>
         </article>
         <article class="brief-card">
           <p class="eyebrow">Upcoming</p>
           <h3>What Makes an AI Explanation Trustworthy?</h3>
           <p class="muted">From fluent answers to reflective trust and rubric-based evaluation.</p>
-        </article>
-        <article class="brief-card">
-          <p class="eyebrow">Upcoming</p>
-          <h3>The Biggest Risk Is Overreliance</h3>
-          <p class="muted">Why students may depend on AI because it reduces cognitive pressure.</p>
         </article>
       </div>
     </section>
