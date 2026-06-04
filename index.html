@@ -6,7 +6,7 @@
   <title>AI Learning Trust Lab</title>
   <meta name="description" content="A student-led research platform studying how AI tutoring can strengthen student reasoning, preserve judgment, and reduce overreliance." />
   <style>
-    /* Admissions redesign step 6: Harvard evidence map + related invention, June 4 */
+    /* Admissions redesign step 7: selected writing added for admissions clarity, June 4 */
     :root {
       --bg: #f6f8fb;
       --paper: #ffffff;
@@ -132,7 +132,7 @@
     .article-body p { font-size: 1rem; margin-bottom: 16px; }
     .article-callout { margin: 24px 0; padding: 18px 20px; border-left: 4px solid var(--accent); background: var(--accent-soft); color: var(--accent-dark); font-weight: 820; border-radius: 12px; }
     .footer { border-top: 1px solid var(--line); margin-top: 80px; padding-top: 24px; color: var(--muted); display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: .92rem; }
-    @media (max-width: 960px) { .hero-grid,.grid-2,.grid-3,.grid-4,.trajectory-grid,.brief-grid,.glance-grid,.proof-strip,.evidence-row,.invention-card { grid-template-columns: 1fr; } .trajectory-card:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -18px; transform: translateX(50%); } .flow { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); text-align: center; } .metric { grid-template-columns: 1fr; } .evidence-cell { border-right: 0; border-bottom: 1px solid var(--line); } .evidence-cell:last-child { border-bottom: 0; } }
+    @media (max-width: 960px) { .hero-grid,.grid-2,.grid-3,.grid-4,.trajectory-grid,.brief-grid,.writing-grid,.glance-grid,.proof-strip,.evidence-row,.invention-card { grid-template-columns: 1fr; } .trajectory-card:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -18px; transform: translateX(50%); } .flow { grid-template-columns: 1fr; } .arrow { transform: rotate(90deg); text-align: center; } .metric { grid-template-columns: 1fr; } .evidence-cell { border-right: 0; border-bottom: 1px solid var(--line); } .evidence-cell:last-child { border-bottom: 0; } }
     @media (max-width: 680px) { .nav { flex-direction: column; align-items: flex-start; } .nav-links { justify-content: flex-start; gap: 10px 14px; } main { padding-top: 28px; } h1 { font-size: clamp(2.15rem, 12vw, 3.2rem); } .article { padding: 24px; } }
   </style>
 </head>
@@ -145,6 +145,7 @@
       <a href="#trajectory">Trajectory</a>
       <a href="#foundations">Foundations</a>
       <a href="#invention">Invention</a>
+      <a href="#writing">Writing</a>
       <a href="#briefs">Briefs</a>
       <a href="#evaluation">Evaluation</a>
       <a href="#rubric">Rubric</a>
@@ -358,6 +359,35 @@
         <div class="invention-point"><b>What it measures</b><span>Non-performance-based rhythm indices such as Rhythmic Disruption Index, Emotional Avoidance Entropy, and Cognitive Inertia Score.</span></div>
         <div class="invention-point"><b>Why it matters here</b><span>It shares the lab’s central design principle: support human agency without prescribing behavior, diagnosis, or productivity correction.</span></div>
       </div>
+    </div>
+  </section>
+
+
+  <section id="writing">
+    <div class="section-heading">
+      <p class="eyebrow">Selected writing</p>
+      <h2>Where the research question became personal.</h2>
+      <p>These essays are included sparingly. They are not separate projects to count; they show the same question appearing in different forms: why do we trust a system, what habits does it train in us, and when does help become a substitute for our own judgment?</p>
+    </div>
+    <div class="writing-grid">
+      <article class="panel writing-card">
+        <p class="eyebrow">Trust and perception</p>
+        <h3>Objectivity Is a Feeling</h3>
+        <p class="muted">This essay began with an uncomfortable observation: the same AI answer can feel more objective when it arrives through a warmer, more responsive interaction.</p>
+        <p class="writing-note">It matters here because AI tutoring does not only deliver information. It also creates the conditions under which students decide whether that information deserves trust.</p>
+      </article>
+      <article class="panel writing-card">
+        <p class="eyebrow">Speech and restraint</p>
+        <h3>Lucid Politeness</h3>
+        <p class="muted">This piece asks why courtesy to ChatGPT can still matter even when the machine cannot be harmed by rudeness.</p>
+        <p class="writing-note">The answer is not sentimentality toward AI. It is a question of formation: a tool that never resists us can still train how we speak, command, wait, and revise.</p>
+      </article>
+      <article class="panel writing-card">
+        <p class="eyebrow">Origin essay</p>
+        <h3>The Night I Asked a Machine for Help</h3>
+        <p class="muted">A personal essay about a night when AI did not solve the writing problem, but made it possible to face the fear underneath it.</p>
+        <p class="writing-note">That experience became one of the lab’s simplest standards: good AI support should return the student to thinking, not quietly take thinking away.</p>
+      </article>
     </div>
   </section>
 
