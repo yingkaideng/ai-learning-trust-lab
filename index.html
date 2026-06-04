@@ -112,6 +112,7 @@
     .output-card { padding: 18px; min-height: 245px; }
     .output-card h3 { color: var(--accent-dark); font-size: 1.02rem; }
     .output-card .type { color: var(--accent); text-transform: uppercase; letter-spacing: .1em; font-size: .66rem; font-weight: 850; margin-bottom: 9px; }
+    .status-pill { display: inline-flex; align-items: center; width: fit-content; margin: 0 0 10px; padding: 5px 9px; border-radius: 999px; background: var(--soft); color: var(--accent-dark); font-size: .68rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
     .output-card .small { color: var(--muted); font-size: .9rem; line-height: 1.45; }
     .output-card .role { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 12px; color: var(--ink); font-size: .9rem; line-height: 1.45; }
     .applications-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
@@ -182,7 +183,7 @@
     <div class="nav-links">
       <a href="#evidence">Evidence</a>
       <a href="#trajectory">Trajectory</a>
-      <a href="#outputs">Outputs</a>
+      <a href="#outputs">Work</a>
       <a href="#foundations">Foundations</a>
       <a href="#invention">Invention</a>
       <a href="#applications">Applications</a>
@@ -324,43 +325,55 @@
   </section>
 
 
-  <!-- STEP 13 VISIBILITY FIX: Research Outputs + Applications are included and visible. -->
+  <!-- STEP 18: Outputs revised for teacher review version. -->
   <section id="outputs">
     <div class="section-heading">
-      <p class="eyebrow">Research outputs</p>
-      <h2>What has already come out of this research path.</h2>
-      <p>This section is intentionally compact. It gives admissions readers a quick view of the concrete work behind the lab: papers, studies, invention work, and public tools.</p>
+      <p class="eyebrow">Work to date</p>
+      <h2>What exists now, and what is still being built.</h2>
+      <p>This section is written for mentor review. It separates completed research and public materials from prototype directions that still need deployment, users, and measurable outcomes.</p>
     </div>
     <div class="output-grid">
       <article class="panel output-card">
+        <span class="status-pill">Completed research</span>
         <p class="type">Technical paper</p>
         <h3>CounterRefine</h3>
         <p class="small">Verifier-mediated factual QA repair using answer-conditioned evidence and a guarded KEEP/REVISE step.</p>
-        <p class="role"><strong>Role in the lab:</strong> gives a technical model for checking before trusting an answer.</p>
+        <p class="role"><strong>Current status:</strong> existing research foundation for the lab’s idea of checking before trusting an answer.</p>
       </article>
       <article class="panel output-card">
+        <span class="status-pill">Completed pilot study</span>
         <p class="type">User study</p>
         <h3>LLM Interaction Study</h3>
         <p class="small">A study comparing passive, proactive, and collaborative ChatGPT-4o support for beginner programming tasks.</p>
-        <p class="role"><strong>Role in the lab:</strong> showed that interaction design matters, while raising the harder question of whether faster help means deeper learning.</p>
+        <p class="role"><strong>Current status:</strong> early evidence that interaction design matters, with the next step being deeper measures of reasoning and transfer.</p>
       </article>
       <article class="panel output-card">
+        <span class="status-pill">Completed project</span>
         <p class="type">Behavior model</p>
         <h3>Student Decision Simulation</h3>
         <p class="small">A 14-node narrative simulation modeling how hesitation and delay accumulate under academic stress.</p>
-        <p class="role"><strong>Role in the lab:</strong> frames learning behavior as a sequence of choices, not only an end result.</p>
+        <p class="role"><strong>Current status:</strong> supports the lab’s view that learning behavior should be studied across a sequence of student choices.</p>
       </article>
       <article class="panel output-card">
+        <span class="status-pill">Invention work</span>
         <p class="type">Related invention</p>
         <h3>Rhythm-Based Reflective Feedback</h3>
         <p class="small">A patent-pending system for non-performance-based rhythm indices and voluntary reflective prompts.</p>
-        <p class="role"><strong>Role in the lab:</strong> supports the design principle of awareness without forced compliance.</p>
+        <p class="role"><strong>Current status:</strong> related system design that informs the lab’s principle of awareness without forced compliance.</p>
       </article>
       <article class="panel output-card">
-        <p class="type">Public framework</p>
+        <span class="status-pill">Public framework</span>
+        <p class="type">Lab output</p>
         <h3>Explanation Rubric and Briefs</h3>
         <p class="small">A public-facing rubric and six research briefs on AI tutoring, trust, agency, tone, and overreliance.</p>
-        <p class="role"><strong>Role in the lab:</strong> turns the research agenda into something teachers and students can discuss.</p>
+        <p class="role"><strong>Current status:</strong> working public platform material, to be strengthened by prototype testing and student feedback.</p>
+      </article>
+      <article class="panel output-card">
+        <span class="status-pill">In progress</span>
+        <p class="type">Next flagship direction</p>
+        <h3>Verifier-Mediated Tutor Prototype</h3>
+        <p class="small">A planned interface that combines collaborative tutoring with support evidence, contradiction checks, uncertainty flags, and student reflection questions.</p>
+        <p class="role"><strong>Current status:</strong> not yet presented as a deployed product; this is the main build-and-pilot direction for the next stage.</p>
       </article>
     </div>
   </section>
