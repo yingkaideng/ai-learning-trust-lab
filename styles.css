@@ -342,3 +342,12 @@
 .output-table .table-row p {
   font-size: 1rem !important;
 }
+
+
+/* v23 outputs one-line title */
+.outputs .section-heading h2 {
+  max-width: 780px !important;
+  font-size: clamp(1.9rem, 2.8vw, 2.55rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.04em !important;
+}

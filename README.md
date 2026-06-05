@@ -1,16 +1,10 @@
 # AI Learning Trust Lab Website
 
-## v22 Outputs Chain Upgrade
+## v23 Research to Public Tools
 
-This version upgrades the Current Outputs section:
-- Heading: From research foundations to public tools.
-- Table wording revised to sound more like a coherent outcomes chain.
-- Status language strengthened:
-  - Technical research foundation
-  - Public evaluation framework
-  - Six brief essays drafted
-  - Pilot survey in development
-  - Prototype direction in development
-- Keeps all previous fixes: no-v1 rubric, small book covers, clickable evidence notes, colored output table columns, six expandable briefs, and Ying Kai Deng name spacing.
+This version fixes the Project Status heading:
+- Changed "From research foundations to public tools." to "Research to public tools."
+- Adjusted heading size so it stays on one line.
+- Keeps all previous fixes: stronger outputs chain wording, table header same size, colored columns, no-v1 rubric, small book covers, clickable evidence notes, six expandable briefs, and Ying Kai Deng name spacing.
 
 Upload all files to GitHub and commit changes.
