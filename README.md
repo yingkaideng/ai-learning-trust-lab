@@ -1,9 +1,15 @@
 # AI Learning Trust Lab Website
 
-## v4 Harvard Reader Version
+## v6 Visual Hierarchy Upgrade
 
-This version reorganizes the website for clarity and fast reading. It simplifies navigation, strengthens the first screen, preserves the evidence strands, adds a clear outputs table, and keeps Writing & Books as intellectual foundation rather than the main focus.
+This version keeps the v5 structure and improves visual hierarchy.
 
-## Upload
+### Main changes
+- Stronger section background differences.
+- Evidence, Outputs, Briefs, Foundation, and Rubric now have distinct visual zones.
+- Cards use softer differentiated background tones.
+- Table rows have alternating backgrounds.
+- Rubric cards have more visual layering.
+- Expandable briefs are easier to scan.
 
-Unzip this folder, upload all files to the GitHub repository root, and click Commit changes.
+Upload all files to GitHub and commit changes.
