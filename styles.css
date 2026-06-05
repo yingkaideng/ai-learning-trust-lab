@@ -351,3 +351,36 @@
   line-height: 1.08 !important;
   letter-spacing: -0.04em !important;
 }
+
+
+/* v24 built-next pathway table */
+.outputs .section-heading {
+  max-width: 880px !important;
+}
+
+.outputs .section-heading h2 {
+  max-width: 720px !important;
+  font-size: clamp(1.9rem, 2.9vw, 2.65rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.outputs .section-heading p:not(.eyebrow) {
+  max-width: 760px !important;
+  font-size: 1.06rem !important;
+  margin-top: 14px !important;
+}
+
+.output-table .table-head {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+  color: var(--navy) !important;
+}
+
+.output-table .table-row strong,
+.output-table .table-row span,
+.output-table .table-row p {
+  font-size: 1rem !important;
+}

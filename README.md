@@ -1,10 +1,19 @@
 # AI Learning Trust Lab Website
 
-## v23 Research to Public Tools
+## v24 Built / Next Pathway
 
-This version fixes the Project Status heading:
-- Changed "From research foundations to public tools." to "Research to public tools."
-- Adjusted heading size so it stays on one line.
-- Keeps all previous fixes: stronger outputs chain wording, table header same size, colored columns, no-v1 rubric, small book covers, clickable evidence notes, six expandable briefs, and Ying Kai Deng name spacing.
+This version changes the Project Status table to a clearer, more honest pathway:
+- Heading: What is built, what is next.
+- Columns: Area / Current status / Next step.
+- Clarifies that the strongest next-stage work is the AI Tutor App, student survey, and usage-impact reports.
+- Avoids overstating incomplete work while preserving the project’s direction.
+
+Keeps previous fixes:
+- No "v1" rubric language.
+- Small book covers.
+- Clickable Evidence notes.
+- Colored table columns.
+- Six expandable briefs.
+- Ying Kai Deng name spacing.
 
 Upload all files to GitHub and commit changes.
