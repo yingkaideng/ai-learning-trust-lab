@@ -1,15 +1,12 @@
 # AI Learning Trust Lab Website
 
-## v6 Visual Hierarchy Upgrade
+## v10 Fixed Clickable Evidence
 
-This version keeps the v5 structure and improves visual hierarchy.
-
-### Main changes
-- Stronger section background differences.
-- Evidence, Outputs, Briefs, Foundation, and Rubric now have distinct visual zones.
-- Cards use softer differentiated background tones.
-- Table rows have alternating backgrounds.
-- Rubric cards have more visual layering.
-- Expandable briefs are easier to scan.
+This version includes:
+- Smaller hero title.
+- Four evidence cards with clickable expandable notes.
+- Output table with distinct column backgrounds.
+- Six expandable briefs.
+- Visual section hierarchy.
 
 Upload all files to GitHub and commit changes.
