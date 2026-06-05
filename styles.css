@@ -184,3 +184,13 @@
   letter-spacing: -0.045em;
   max-width: 900px;
 }
+
+
+/* Founder no-button polish */
+.founder-card {
+  align-items: flex-start;
+}
+
+.founder-card > div {
+  max-width: 880px;
+}

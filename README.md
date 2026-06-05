@@ -1,12 +1,11 @@
 # AI Learning Trust Lab Website
 
-## v14 Core Problem Polish
+## v15 Remove Writing Background Button
 
 This version includes:
-- Positive "What this lab does" title: A focused platform for AI tutoring, trust, and student reasoning.
-- Polished Core Problem headline: Correct answers can still weaken learning.
-- Slightly smaller Core Problem title styling.
-- Removed "v1" from rubric language.
-- Includes small book covers, expandable briefs, clickable evidence notes, and colored output table columns.
+- Removed the "View writing background" button from the Founder section to avoid repeating the two book introductions.
+- Keeps the two small book covers in the Intellectual Foundation section.
+- Keeps the polished platform title and Core Problem section.
+- Keeps the no-v1 rubric language, expandable briefs, clickable evidence notes, and colored output table.
 
 Upload all files to GitHub and commit changes.
