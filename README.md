@@ -1,11 +1,11 @@
 # AI Learning Trust Lab Website
 
-## v15 Remove Writing Background Button
+## v16 Outputs Title + Name Fix
 
 This version includes:
-- Removed the "View writing background" button from the Founder section to avoid repeating the two book introductions.
-- Keeps the two small book covers in the Intellectual Foundation section.
-- Keeps the polished platform title and Core Problem section.
-- Keeps the no-v1 rubric language, expandable briefs, clickable evidence notes, and colored output table.
+- Changed the Current Outputs heading to: "Current outputs and next steps."
+- Changed "YingKai Deng" to "Ying Kai Deng" throughout the site.
+- Keeps the removed writing background button.
+- Keeps the small book covers, no-v1 rubric language, expandable briefs, clickable evidence notes, and colored output table columns.
 
 Upload all files to GitHub and commit changes.
