@@ -1,10 +1,11 @@
 # AI Learning Trust Lab Website
 
-## v19 Featured Briefs Polish
+## v20 Balanced Table Header
 
-This version updates the Featured Briefs section:
-- Heading: "Six brief essays on AI tutoring, trust, and student reasoning."
-- Description: "These essays translate the lab’s research question into short, readable pieces for students, teachers, and education leaders."
-- Keeps all previous fixes: Project status heading, no-v1 rubric, small book covers, clickable evidence notes, colored output table columns, and expandable briefs.
+This version updates the Current Outputs table header:
+- Header labels use title case: Output / Status / Why it matters.
+- Header still looks distinct through weight, size, and background.
+- Removed overly wide uppercase letter spacing.
+- Keeps colored table columns and all previous website changes.
 
 Upload all files to GitHub and commit changes.

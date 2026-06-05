@@ -275,3 +275,25 @@
   max-width: 700px !important;
   margin-bottom: 0 !important;
 }
+
+
+/* v20 balanced table header */
+.output-table .table-head {
+  text-transform: none !important;
+  letter-spacing: 0.015em !important;
+  font-size: 0.92rem !important;
+  font-weight: 900 !important;
+  color: var(--navy) !important;
+}
+
+.output-table .table-head > * {
+  line-height: 1.35 !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+}
+
+.output-table .table-row strong,
+.output-table .table-row span,
+.output-table .table-row p {
+  font-size: 1rem;
+}
