@@ -175,3 +175,12 @@
     width: 60px;
   }
 }
+
+
+/* Core problem polish */
+.dark-inner h2 {
+  font-size: clamp(1.9rem, 3.6vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  max-width: 900px;
+}
