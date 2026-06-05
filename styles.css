@@ -297,3 +297,48 @@
 .output-table .table-row p {
   font-size: 1rem;
 }
+
+
+/* v21 table header same size */
+.output-table .table-head {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+  color: var(--navy) !important;
+}
+
+.output-table .table-head > * {
+  line-height: 1.45 !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.output-table .table-row strong,
+.output-table .table-row span,
+.output-table .table-row p {
+  font-size: 1rem !important;
+}
+
+
+/* v22 outputs chain heading */
+.outputs .section-heading h2 {
+  max-width: 880px !important;
+  font-size: clamp(1.9rem, 3.2vw, 2.85rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.output-table .table-head {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+  color: var(--navy) !important;
+}
+
+.output-table .table-row strong,
+.output-table .table-row span,
+.output-table .table-row p {
+  font-size: 1rem !important;
+}
